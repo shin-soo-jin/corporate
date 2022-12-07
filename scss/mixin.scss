@@ -1,0 +1,24 @@
+@mixin button(
+	$width: 190px,
+	$height: 45px,
+	$background: #4b84db,
+	$fontSize: 12px,
+	$fontWeight: bold,
+	$color: #fff,
+	$transition: 0.5s
+) {
+	display: block;
+	width: $width;
+	height: $height;
+	background: $background;
+	text-align: center;
+	line-height: $height;
+	font-size: $fontSize;
+	font-weight: $fontWeight;
+	color: $color;
+	transition: $transition;
+	&:hover {
+		color: $background;
+		background: $color;
+	}
+}

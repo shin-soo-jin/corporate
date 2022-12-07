@@ -11,72 +11,83 @@
 </head>
 
 <body>
-  <header>
+  <header id="header">
     <div class="inner">
-      <h1>B</h1>
-      <nav>
-        <ul>
-          <li><a href="#">HOME</a></li>
-          <li><a href="#">ABOUT</a></li>
-          <li><a href="#">SERVICES</a></li>
-          <li><a href="#">TEAM</a></li>
-          <li><a href="#">CLIENT</a></li>
-          <li><a href="#">CONTACT</a></li>
+      <h1><a href="index.html">B</a></h1>
+      <div class="menuWeb">
+        <nav id="gnb">
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">SERVICES</a></li>
+            <li><a href="#">TEAM</a></li>
+            <li><a href="#">CLIENT</a></li>
+            <li><a href="#">CONTACT</a></li>
+          </ul>
+        </nav>
+        <ul class="util">
+          <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-bars"></i></a></li>
         </ul>
-      </nav>
-      <span>
-        <a href="#">검색</a>
-        <a href="#">메뉴</a>
-      </span>
+      </div>
     </div>
   </header>
-  <section class="visual">
+
+  <figure id="visual">
     <div class="slider">
       <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
       </ul>
     </div>
-    <div class="txt">
-      <div class="inner">
-        <h2>WELCOME TO YOUR NEW WEBSITE</h2>
-        <p>WE CREATE CAREERS</p>
-        <a href="#" class="btn">SEE OUR LATEST WORK </a>
+    <span class="circle">
+      <a href="#" class="on">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+    </span>
+    <div class="inner">
+      <h2>WELCOME TO YOUR NEW WEBSITE</h2>
+      <p>WE CREATE <br>CAREERS</p>
+      <a href="#" class="btn">SEE OUR LATEST WORK </a>
+    </div>
+  </figure>
+
+  <section id="strategy">
+    <div class="inner">
+      <h2 class="hidden">strategy</h2>
+      <div class="wrap">
+        <article>
+          <i class="fa-regular fa-life-ring"></i>
+          <h3>GLOBAL STRATEGY</h3>
+          <p>Sometimes the simplest things are the hardest to find So we created a new line for everday life All your
+          </p>
+        </article>
+        <article>
+          <i class="fa-regular fa-message"></i>
+          <h3>GLOBAL STRATEGY</h3>
+          <p>Sometimes the simplest things are the hardest to find So we created a new line for everday life All your
+          </p>
+        </article>
+        <article>
+          <i class="fa-regular fa-hourglass"></i>
+          <h3>GLOBAL STRATEGY</h3>
+          <p>Sometimes the simplest things are the hardest to find So we created a new line for everday life All your
+          </p>
+        </article>
+        <article>
+          <i class="fa-regular fa-lightbulb"></i>
+          <h3>GLOBAL STRATEGY</h3>
+          <p>Sometimes the simplest things are the hardest to find So we created a new line for everday life All your
+          </p>
+        </article>
       </div>
     </div>
   </section>
-  <section class="strategy">
-    <h2 class="hidden">strategy</h2>
-    <div class="inner">
-      <article>
-        <i class="fa-regular fa-life-ring"></i>
-        <h3>GLOBAL STRATEGY</h3>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam consectetur voluptatibus est alias inventore
-          aliquid, nisi asperiores adipisci a maxime.</p>
-      </article>
-      <article>
-        <i class="fa-regular fa-message"></i>
-        <h3>GLOBAL STRATEGY</h3>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam consectetur voluptatibus est alias inventore
-          aliquid, nisi asperiores adipisci a maxime.</p>
-      </article>
-      <article>
-        <i class="fa-regular fa-hourglass"></i>
-        <h3>GLOBAL STRATEGY</h3>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam consectetur voluptatibus est alias inventore
-          aliquid, nisi asperiores adipisci a maxime.</p>
-      </article>
-      <article>
-        <i class="fa-regular fa-lightbulb"></i>
-        <h3>GLOBAL STRATEGY</h3>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam consectetur voluptatibus est alias inventore
-          aliquid, nisi asperiores adipisci a maxime.</p>
-      </article>
-    </div>
-  </section>
-  <section class="company">
+
+  <section id="company">
     <div class="inner">
       <div class="text">
         <h2>MEET OUR COMPANY</h2>
@@ -85,53 +96,67 @@
           officiis minima inventore?</p>
         <a href="#" class="btn">SEE OUR LATEST WORK </a>
       </div>
-      <div class="video">
-        <video src="img/company.mp4"></video>
+      <div class="vid">
+        <video src="img/company.mp4" loop></video>
+        <a href="#" class="vidBtn">
+          <i class="fa-solid fa-play "></i>
+        </a>
       </div>
     </div>
   </section>
-  <section class="work">
-    <h2 class="hidden">work</h2>
+
+  <section id="work">
     <div class="inner">
-      <article>
-        <div class="pic">
-          <img src="img/work1.jpg" alt="">
-        </div>
-        <div class="text">
-          <h3>OUR MISSION STATEMENT</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore illum ad reiciendis ex assumenda possimus
-            id? Accusamus error excepturi eos libero debitis. Doloremque commodi repellendus, veritatis laboriosam esse
-            ratione voluptas.</p>
-          <a href="#">READ MORE</a>
-        </div>
-      </article>
-      <article>
-        <div class="pic">
-          <img src="img/work2.jpg" alt="">
-        </div>
-        <div class="text">
-          <h3>ACHIEVING OUR GOALS IN 2016</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore illum ad reiciendis ex assumenda possimus
-            id? Accusamus error excepturi eos libero debitis. Doloremque commodi repellendus, veritatis laboriosam esse
-            ratione voluptas.</p>
-          <a href="#">READ MORE</a>
-        </div>
-      </article>
-      <article>
-        <div class="pic">
-          <img src="img/work3.jpg" alt="">
-        </div>
-        <div class="text">
-          <h3>OUR ANNUAL REPORT</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore illum ad reiciendis ex assumenda possimus
-            id? Accusamus error excepturi eos libero debitis. Doloremque commodi repellendus, veritatis laboriosam esse
-            ratione voluptas.</p>
-          <a href="#">READ MORE</a>
-        </div>
-      </article>
+      <h2 class="hidden">work</h2>
+      <div class="wrap">
+        <article>
+          <div class="pic">
+            <img src="img/work1.jpg" alt="회의실 사진">
+          </div>
+          <div class="text">
+            <h3>OUR MISSION STATEMENT</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore illum ad reiciendis ex assumenda
+              possimus
+              id? Accusamus error excepturi eos libero debitis. Doloremque commodi repellendus, veritatis laboriosam
+              esse
+              ratione voluptas.</p>
+            <a href="#">READ MORE</a>
+          </div>
+        </article>
+        <article>
+          <div class="pic">
+            <img src="img/work2.jpg" alt="계획표 사진">
+          </div>
+          <div class="text">
+            <h3>ACHIEVING OUR GOALS IN 2016</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore illum ad reiciendis ex assumenda
+              possimus
+              id? Accusamus error excepturi eos libero debitis. Doloremque commodi repellendus, veritatis laboriosam
+              esse
+              ratione voluptas.</p>
+            <a href="#">READ MORE</a>
+          </div>
+        </article>
+        <article>
+          <div class="pic">
+            <img src="img/work3.jpg" alt="">
+          </div>
+          <div class="text">
+            <h3>OUR ANNUAL REPORT</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore illum ad reiciendis ex assumenda
+              possimus
+              id? Accusamus error excepturi eos libero debitis. Doloremque commodi repellendus, veritatis laboriosam
+              esse
+              ratione voluptas.</p>
+            <a href="#">READ MORE</a>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
-  <section class="graph">
+
+  <section id="graph">
+    <div class="graphMask"></div>
     <div class="inner">
       <div class="text">
         <h2>MEET OUR COMPANY</h2>
@@ -149,30 +174,33 @@
       </div>
     </div>
   </section>
-  <section class="partner">
+  <section id="partner">
     <h2 class="hidden">partner</h2>
     <div class="inner">
       <ul>
-        <li><a href="#">파트너사1</a></li>
-        <li><a href="#">파트너사2</a></li>
-        <li><a href="#">파트너사3</a></li>
-        <li><a href="#">파트너사4</a></li>
-        <li><a href="#">파트너사5</a></li>
-        <li><a href="#">파트너사6</a></li>
+        <li><a href="#">partner1</a></li>
+        <li><a href="#">partner2</a></li>
+        <li><a href="#">partner3</a></li>
+        <li><a href="#">partner4</a></li>
+        <li><a href="#">partner5</a></li>
+        <li><a href="#">partner6</a></li>
       </ul>
     </div>
   </section>
-  <footer>
+  <footer id="footer">
     <div class="inner">
-      <a href="#">B</a>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores adipisci, velit possimus quisquam dicta
-        eligendi maxime debitis eius sequi incidunt officia ut corrupti deleniti ea rerum dolorem accusantium voluptates
-        nemo?</p>
-      <div class="sns">
-        <a href="#"><i class="fa-brands fa-twitter"></i>twitter</a>
-        <a href="#"><i class="fa-brands fa-facebook-f"></i>facebook</a>
-        <a href="#"><i class="fa-brands fa-pinterest-p"></i>pinterest</a>
-        <a href="#"><i class="fa-brands fa-linkedin-in"></i>linkdin</a>
+      <div class="text">
+        <h2 href="#" class="footLogo">B</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores adipisci, velit possimus quisquam dicta
+          eligendi maxime debitis eius sequi incidunt officia ut corrupti deleniti ea rerum dolorem accusantium
+          voluptates
+          nemo?</p>
+        <div class="sns">
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
       </div>
       <div class="link">
         <p>
@@ -214,10 +242,10 @@
         </ul>
       </div>
     </div>
-    <p class="copy">Copyright &copy; SSJ All Rights Reserved.</p>
-    <a href="#" class="topBtn">
+    <p class="copy">Copyright &copy; B All Rights Reserved.</p>
+    <a href="#" class="btnTop">
       <i class="fa-solid fa-arrow-up"></i>
-      상단으로
+      <span>TOP</span>
     </a>
   </footer>
 </body>

@@ -195,7 +195,7 @@
     </div>
   </section>
 
-  <section id="partner">
+  <!-- <section id="partner">
     <h2 class="hidden">partner</h2>
     <div class="inner">
       <ul>
@@ -207,7 +207,7 @@
         <li><a href="#">partner6</a></li>
       </ul>
     </div>
-  </section>
+  </section> -->
 
   <section id="contact">
     <div class="inner">
@@ -223,27 +223,38 @@
         <fieldset>
           <legend class="hidden">CONTACT OUR COMPANY</legend>
 
-          <h3>CATEGORY</h3>
-          <label for="pc">
-            <input type="checkbox" name="category" id="pc" value="pc">PC
-          </label>
-          <label for="mobile">
-            <input type="checkbox" name="category" id="mobile" value="mobile">MOBILE
-          </label>
-          <label for="responsive">
-            <input type="checkbox" name="category" id="responsive" value="responsive">RESPONSIVE
-          </label>
-
-          <label for="name">NAME</label>
-          <input type="text" name="name" id="name">
-
-          <label for="email">E-MAIL</label>
-          <input type="text" name="email" id="email">
-
-          <label for="comments">COMMENTS</label>
-          <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
-
-          <input type="button" value="SUBMIT">
+          <table>
+            <caption class="hidden">CONTACT OUR COMPANY</caption>
+            <tr>
+              <th scope="row">CATEGORY</th>
+              <td>
+                <label for="pc">
+                  <input type="checkbox" name="category" id="pc" value="pc">PC
+                </label>
+                <label for="mobile">
+                  <input type="checkbox" name="category" id="mobile" value="mobile">MOBILE
+                </label>
+                <label for="responsive">
+                  <input type="checkbox" name="category" id="responsive" value="responsive">RESPONSIVE
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="name">NAME</label></th>
+              <td><input type="text" name="name" id="name"></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="email">E-MAIL</label></th>
+              <td><input type="text" name="email" id="email"></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="comments">COMMENTS</label></th>
+              <td><textarea name="comments" id="comments" cols="30" rows="10"></textarea></td>
+            </tr>
+            <tr>
+              <th colspan="2"><input type="button" value="SUBMIT"></th>
+            </tr>
+          </table>
         </fieldset>
       </form>
     </div>

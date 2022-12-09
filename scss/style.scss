@@ -40,6 +40,7 @@ $mobile: 539px;
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: 2;
 	.inner {
 		position: relative;
 		h1 {
@@ -99,7 +100,7 @@ $mobile: 539px;
 				top: 30px;
 				right: 0;
 				right: 3%;
-				z-index: 11;
+				z-index: 3;
 				span {
 					display: block;
 					width: 100%;
@@ -161,7 +162,7 @@ $mobile: 539px;
 		height: 100vh;
 		padding: 80px 30px;
 		background: #082f6a;
-		z-index: 10;
+		z-index: 2;
 		transition: 0.5s;
 		&.on {
 			right: 0;
@@ -189,7 +190,6 @@ $mobile: 539px;
 	.slider {
 		width: 100%;
 		height: 100%;
-		z-index: -1;
 		position: relative;
 		ul {
 			width: 400%;
@@ -239,6 +239,26 @@ $mobile: 539px;
 			background: #fff;
 		}
 	}
+	.swiper-button-next {
+		right: 5%;
+		color: #fff;
+		z-index: 1;
+		transform: scale(0.8);
+		transition: 0.3s;
+		&:hover {
+			transform: scale(1);
+		}
+	}
+	.swiper-button-prev {
+		left: 5%;
+		color: #fff;
+		transform: scale(0.8);
+		transition: 0.5s;
+		&:hover {
+			transform: scale(1);
+		}
+	}
+
 	// .circle {
 	// 	position: absolute;
 	// 	bottom: 5%;
@@ -258,11 +278,13 @@ $mobile: 539px;
 	// 		}
 	// 	}
 	// }
+
 	.inner {
 		.text {
 			position: absolute;
 			top: 30%;
 			left: auto;
+			z-index: 1;
 			h2 {
 				font-size: 16px;
 				font-weight: bold;
@@ -551,6 +573,7 @@ $mobile: 539px;
 
 #contact {
 	padding: 80px 0;
+	background: #f5f5f5;
 	.inner {
 		display: flex;
 		justify-content: space-between;
@@ -567,8 +590,10 @@ $mobile: 539px;
 			}
 			span {
 				font-size: 14px;
-				font-weight: bold;
 				padding-right: 20px;
+				b {
+					margin-right: 5px;
+				}
 			}
 		}
 		form {
@@ -844,6 +869,9 @@ $mobile: 539px;
 			.text {
 				span {
 					display: inline-block;
+					b {
+						display: block;
+					}
 				}
 			}
 			form {

@@ -416,15 +416,15 @@ $mobile: 539px;
 					height: 100%;
 					background: rgba(0, 0, 0, 0.1);
 					position: absolute;
-					top: -100%;
+					top: 0;
 					left: 0;
 					opacity: 0;
 					transition: 0.5s;
 				}
 				&:hover {
+					box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 					&::after {
 						opacity: 1;
-						top: 0;
 					}
 					.pic {
 						img {
@@ -766,8 +766,10 @@ $mobile: 539px;
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
+					margin-bottom: 20px;
 					.pic {
 						width: 49%;
+						margin-bottom: 0;
 					}
 					.text {
 						width: 49%;

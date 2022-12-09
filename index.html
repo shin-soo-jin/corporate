@@ -8,6 +8,9 @@
   <title>포트폴리오-기업형레이아웃</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/d2d511e352.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script defer src="js/main.js"></script>
 </head>
 
 <body>
@@ -27,13 +30,12 @@
         </nav>
         <ul class="util">
           <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-          <li><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+          <li><a href="#"><i class="fas fa-user"></i></a></li>
         </ul>
       </div>
 
       <div class="menuMo">
         <a href="#" class="btnCall"><span>menu</span></a>
-
       </div>
     </div>
     <nav id="gnbMo">
@@ -49,20 +51,21 @@
   </header>
 
   <figure id="visual">
-    <div class="slider">
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+    <div class="slider mySwiper">
+      <ul class="swiper-wrapper">
+        <li class="swiper-slide"></li>
+        <li class="swiper-slide"></li>
+        <li class="swiper-slide"></li>
+        <li class="swiper-slide"></li>
       </ul>
     </div>
-    <span class="circle">
+    <div class="swiper-pagination"></div>
+    <!-- <span class="circle">
       <a href="#" class="on">1</a>
       <a href="#">2</a>
       <a href="#">3</a>
       <a href="#">4</a>
-    </span>
+    </span> -->
     <div class="inner">
       <div class="text">
         <h2>WELCOME TO YOUR NEW WEBSITE</h2>
@@ -172,6 +175,7 @@
     </div>
   </section>
 
+
   <section id="graph">
     <div class="inner">
       <div class="text">
@@ -190,6 +194,7 @@
       </div>
     </div>
   </section>
+
   <section id="partner">
     <h2 class="hidden">partner</h2>
     <div class="inner">
@@ -203,6 +208,47 @@
       </ul>
     </div>
   </section>
+
+  <section id="contact">
+    <div class="inner">
+      <div class="text">
+        <h2>CONTACT OUR COMPANY</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos suscipit unde atque veniam, quas, repellendus,
+          magni eligendi similique impedit perferendis ex et quisquam soluta in? Ab iusto tempora consectetur minima?
+        </p>
+        <span>TEL 070-1234-5678</span>
+        <span>E-MAIL B@B.com </span>
+      </div>
+      <form action="">
+        <fieldset>
+          <legend class="hidden">CONTACT OUR COMPANY</legend>
+
+          <h3>CATEGORY</h3>
+          <label for="pc">
+            <input type="checkbox" name="category" id="pc" value="pc">PC
+          </label>
+          <label for="mobile">
+            <input type="checkbox" name="category" id="mobile" value="mobile">MOBILE
+          </label>
+          <label for="responsive">
+            <input type="checkbox" name="category" id="responsive" value="responsive">RESPONSIVE
+          </label>
+
+          <label for="name">NAME</label>
+          <input type="text" name="name" id="name">
+
+          <label for="email">E-MAIL</label>
+          <input type="text" name="email" id="email">
+
+          <label for="comments">COMMENTS</label>
+          <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+
+          <input type="button" value="SUBMIT">
+        </fieldset>
+      </form>
+    </div>
+  </section>
+
   <footer id="footer">
     <div class="inner">
       <div class="text">

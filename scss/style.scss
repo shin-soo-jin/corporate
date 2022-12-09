@@ -95,8 +95,10 @@ $mobile: 539px;
 				width: 20px;
 				height: 20px;
 				position: absolute;
-				top: 23px;
+				position: fixed;
+				top: 30px;
 				right: 0;
+				right: 3%;
 				z-index: 11;
 				span {
 					display: block;
@@ -152,15 +154,18 @@ $mobile: 539px;
 		}
 	}
 	#gnbMo {
-		display: none;
-		position: absolute;
+		position: fixed;
 		top: 0;
-		right: 0;
-		width: 30%;
+		right: -40%;
+		width: 40%;
 		height: 100vh;
 		padding: 80px 30px;
-		background: #4b84db;
+		background: #082f6a;
 		z-index: 10;
+		transition: 0.5s;
+		&.on {
+			right: 0;
+		}
 		ul {
 			li {
 				a {
@@ -180,10 +185,12 @@ $mobile: 539px;
 #visual {
 	width: 100%;
 	height: 100vh;
-	// overflow: hidden;
+	overflow: hidden;
 	.slider {
 		width: 100%;
 		height: 100%;
+		z-index: -1;
+		position: relative;
 		ul {
 			width: 400%;
 			height: 100%;
@@ -202,8 +209,6 @@ $mobile: 539px;
 				}
 				&:nth-of-type(3) {
 					background-image: url(../img/visual3.jpg);
-					background-position: 30% bottom;
-					background-size: 110%;
 				}
 				&:nth-of-type(4) {
 					background-image: url(../img/visual4.jpg);
@@ -213,30 +218,46 @@ $mobile: 539px;
 					display: block;
 					width: 100%;
 					height: 100%;
-					background: rgba(0, 0, 0, 0.5);
+					background: rgba(0, 0, 0, 0.4);
 				}
 			}
 		}
 	}
-	.circle {
+	.swiper-pagination {
 		position: absolute;
 		bottom: 5%;
 		left: 50%;
 		transform: translateX(-50%);
-		a {
-			display: inline-block;
+		.swiper-pagination-bullet {
 			width: 10px;
 			height: 10px;
+			margin: 0 7px;
 			background: rgba(255, 255, 255, 0.5);
-			border-radius: 50%;
-			margin: 0 5px;
-			text-indent: -99999px;
-			color: transparent;
-			&.on {
-				background: #fff;
-			}
+			opacity: 1;
+		}
+		.swiper-pagination-bullet-active {
+			background: #fff;
 		}
 	}
+	// .circle {
+	// 	position: absolute;
+	// 	bottom: 5%;
+	// 	left: 50%;
+	// 	transform: translateX(-50%);
+	// 	a {
+	// 		display: inline-block;
+	// 		width: 10px;
+	// 		height: 10px;
+	// 		background: rgba(255, 255, 255, 0.5);
+	// 		border-radius: 50%;
+	// 		margin: 0 5px;
+	// 		text-indent: -99999px;
+	// 		color: transparent;
+	// 		&.on {
+	// 			background: #fff;
+	// 		}
+	// 	}
+	// }
 	.inner {
 		.text {
 			position: absolute;
@@ -352,12 +373,15 @@ $mobile: 539px;
 			display: flex;
 			justify-content: space-between;
 			article {
+				position: relative;
 				width: 380px;
+				overflow: hidden;
+				cursor: pointer;
 				.pic {
 					width: 100%;
 					height: 245px;
 					overflow: hidden;
-					margin-bottom: 20px;
+					margin-bottom: 10px;
 					img {
 						width: 100%;
 						height: 100%;
@@ -366,14 +390,9 @@ $mobile: 539px;
 						transition: 0.5s;
 					}
 				}
-				&:hover {
-					.pic {
-						img {
-							transform: scale(1.05);
-						}
-					}
-				}
 				.text {
+					padding: 10px;
+					transition: 0.5s;
 					h3 {
 						font-size: 14px;
 						margin-bottom: 20px;
@@ -384,9 +403,36 @@ $mobile: 539px;
 						margin-bottom: 20px;
 					}
 					a {
+						display: block;
 						font-size: 12px;
 						font-weight: bold;
 						color: #4b84db;
+					}
+				}
+				&::after {
+					content: "";
+					display: block;
+					width: 100%;
+					height: 100%;
+					background: rgba(0, 0, 0, 0.1);
+					position: absolute;
+					top: -100%;
+					left: 0;
+					opacity: 0;
+					transition: 0.5s;
+				}
+				&:hover {
+					&::after {
+						opacity: 1;
+						top: 0;
+					}
+					.pic {
+						img {
+							transform: scale(1.05);
+						}
+					}
+					.text {
+						transform: scale(1.05);
 					}
 				}
 			}
@@ -404,7 +450,7 @@ $mobile: 539px;
 		display: block;
 		width: 100%;
 		height: 100%;
-		background: rgba(0, 0, 0, 0.5);
+		background: rgba(0, 0, 0, 0.4);
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -482,7 +528,7 @@ $mobile: 539px;
 
 #partner {
 	padding: 50px 0;
-	background: #4b84db;
+	background: #082f6a;
 	.inner {
 		ul {
 			display: flex;
@@ -496,6 +542,46 @@ $mobile: 539px;
 					border-radius: 50%;
 					line-height: 70px;
 					text-align: center;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+#contact {
+	padding: 80px 0;
+	background: #4b84db;
+	.inner {
+		display: flex;
+		justify-content: space-between;
+		.text {
+			width: 30%;
+			h2 {
+				font-size: 20px;
+				color: #fff;
+				margin-bottom: 40px;
+			}
+			p {
+				font-size: 12px;
+				color: #fff;
+				margin-bottom: 40px;
+			}
+			span {
+				font-size: 14px;
+				color: #fff;
+				padding-right: 20px;
+			}
+		}
+		form {
+			width: 69%;
+			fieldset {
+				border: none;
+				h3 {
+					color: #fff;
+					font-size: 16px;
+				}
+				label {
 					color: #fff;
 				}
 			}
@@ -610,6 +696,9 @@ $mobile: 539px;
 		width: 95%;
 	}
 	#header {
+		position: fixed;
+		background: rgba(0, 0, 0, 0.4);
+		z-index: 10;
 		.inner {
 			.menuWeb {
 				display: none;

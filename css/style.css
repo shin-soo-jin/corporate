@@ -86,7 +86,6 @@ a {
   display: none;
   width: 20px;
   height: 20px;
-  position: absolute;
   position: fixed;
   top: 30px;
   right: 0;
@@ -164,6 +163,47 @@ a {
   font-weight: bold;
   color: #fff;
 }
+#header .scrollNavi {
+  position: fixed;
+  right: 1%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#header .scrollNavi li {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 10px;
+}
+#header .scrollNavi li span {
+  margin-right: 15px;
+  font-size: 12px;
+  color: #aaa;
+  opacity: 0;
+  transition: 0.3s;
+}
+#header .scrollNavi li a {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  line-height: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  background: #ddd;
+  overflow: hidden;
+  transition: 0.3s;
+}
+#header .scrollNavi li:hover a {
+  transform: scale(1.5);
+  background: #fff;
+}
+#header .scrollNavi li:hover span {
+  opacity: 1;
+}
+#header .scrollNavi li.on a {
+  transform: scale(1.5);
+  background: #fff;
+}
 
 #visual {
   width: 100%;
@@ -218,9 +258,14 @@ a {
   margin: 0 7px;
   background: rgba(255, 255, 255, 0.5);
   opacity: 1;
+  transform: scale(1);
+}
+#visual .swiper-pagination .swiper-pagination-bullet:hover {
+  transform: scale(1.2);
 }
 #visual .swiper-pagination .swiper-pagination-bullet-active {
   background: #fff;
+  transform: scale(1.2);
 }
 #visual .swiper-button-next {
   right: 5%;
@@ -277,20 +322,39 @@ a {
   background: #fff;
 }
 
-#strategy {
+#about {
   width: 100%;
   padding: 80px 0;
 }
-#strategy .inner .wrap {
+#about.show .inner .wrap article {
+  opacity: 1;
+  transform: translateY(0);
+}
+#about .inner .wrap {
   display: flex;
   justify-content: space-between;
 }
-#strategy .inner .wrap article {
+#about .inner .wrap article {
   width: 280px;
   padding: 20px;
   text-align: center;
+  opacity: 0;
+  transform: translateY(-10%);
+  transition: 0.5s;
 }
-#strategy .inner .wrap article i {
+#about .inner .wrap article:nth-of-type(1) {
+  transition-delay: 0s;
+}
+#about .inner .wrap article:nth-of-type(2) {
+  transition-delay: 0.2s;
+}
+#about .inner .wrap article:nth-of-type(3) {
+  transition-delay: 0.4s;
+}
+#about .inner .wrap article:nth-of-type(4) {
+  transition-delay: 0.6s;
+}
+#about .inner .wrap article i {
   width: 80px;
   height: 80px;
   line-height: 80px;
@@ -300,11 +364,11 @@ a {
   font-size: 30px;
   margin-bottom: 30px;
 }
-#strategy .inner .wrap article h3 {
+#about .inner .wrap article h3 {
   font-size: 14px;
   margin-bottom: 20px;
 }
-#strategy .inner .wrap article p {
+#about .inner .wrap article p {
   font-size: 12px;
 }
 
@@ -313,6 +377,14 @@ a {
   padding: 80px 0;
   background: #f5f5f5;
 }
+#company.show .inner .text {
+  transform: translateX(0%);
+  opacity: 1;
+}
+#company.show .inner .vid {
+  transform: translateX(0%);
+  opacity: 1;
+}
 #company .inner {
   display: flex;
   justify-content: space-between;
@@ -320,6 +392,9 @@ a {
 }
 #company .inner .text {
   width: 49%;
+  transform: translateX(-10%);
+  transition: 1s;
+  opacity: 0;
 }
 #company .inner .text h2 {
   font-size: 20px;
@@ -349,6 +424,9 @@ a {
   width: 49%;
   overflow: hidden;
   position: relative;
+  transform: translateX(10%);
+  transition: 1s;
+  opacity: 0;
 }
 #company .inner .vid video {
   width: 100%;
@@ -374,6 +452,10 @@ a {
 #work {
   padding: 80px 0;
 }
+#work.show .inner .wrap article {
+  opacity: 1;
+  transform: translateY(0);
+}
 #work .inner .wrap {
   display: flex;
   justify-content: space-between;
@@ -383,6 +465,18 @@ a {
   width: 380px;
   overflow: hidden;
   cursor: pointer;
+  opacity: 0;
+  transform: translateY(-10%);
+  transition: 0.5s;
+}
+#work .inner .wrap article:nth-of-type(1) {
+  transition-delay: 0s;
+}
+#work .inner .wrap article:nth-of-type(2) {
+  transition-delay: 0.2s;
+}
+#work .inner .wrap article:nth-of-type(3) {
+  transition-delay: 0.4s;
 }
 #work .inner .wrap article .pic {
   width: 100%;
@@ -441,12 +535,20 @@ a {
   transform: scale(1.05);
 }
 
-#graph {
+#news {
   padding: 80px 0;
   background: url(../img/graph.jpg) no-repeat 50% 58%/cover;
   position: relative;
 }
-#graph::after {
+#news.show .inner .text {
+  opacity: 1;
+  transform: translateX(0%);
+}
+#news.show .inner .bars {
+  opacity: 1;
+  transform: translateX(0%);
+}
+#news::after {
   content: "";
   display: block;
   width: 100%;
@@ -457,27 +559,30 @@ a {
   left: 0;
   z-index: 1;
 }
-#graph .inner {
+#news .inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-#graph .inner .text {
+#news .inner .text {
   width: 49%;
   position: relative;
   z-index: 2;
+  opacity: 1;
+  transform: translateX(-10%);
+  transition: 0.5s;
 }
-#graph .inner .text h2 {
+#news .inner .text h2 {
   font-size: 20px;
   color: #fff;
   margin-bottom: 40px;
 }
-#graph .inner .text p {
+#news .inner .text p {
   font-size: 12px;
   color: #fff;
   margin-bottom: 40px;
 }
-#graph .inner .text .btn {
+#news .inner .text .btn {
   display: block;
   width: 190px;
   height: 45px;
@@ -489,25 +594,28 @@ a {
   color: #fff;
   transition: 0.5s;
 }
-#graph .inner .text .btn:hover {
+#news .inner .text .btn:hover {
   color: #4b84db;
   background: #fff;
 }
-#graph .inner .bars {
+#news .inner .bars {
   width: 49%;
   z-index: 2;
+  opacity: 1;
+  transform: translateX(10%);
+  transition: 0.5s;
 }
-#graph .inner .bars p {
+#news .inner .bars p {
   font-size: 12px;
   font-weight: bold;
   color: #fff;
   margin-bottom: 30px;
   position: relative;
 }
-#graph .inner .bars p span {
+#news .inner .bars p span {
   float: right;
 }
-#graph .inner .bars p::before {
+#news .inner .bars p::before {
   content: "";
   display: block;
   width: 100%;
@@ -517,7 +625,7 @@ a {
   top: 120%;
   left: 0;
 }
-#graph .inner .bars p::after {
+#news .inner .bars p::after {
   content: "";
   display: block;
   height: 10px;
@@ -526,36 +634,17 @@ a {
   top: 120%;
   left: 0;
 }
-#graph .inner .bars p:nth-of-type(1)::after {
+#news .inner .bars p:nth-of-type(1)::after {
   width: 20%;
 }
-#graph .inner .bars p:nth-of-type(2)::after {
+#news .inner .bars p:nth-of-type(2)::after {
   width: 45%;
 }
-#graph .inner .bars p:nth-of-type(3)::after {
+#news .inner .bars p:nth-of-type(3)::after {
   width: 75%;
 }
-#graph .inner .bars p:nth-of-type(4)::after {
+#news .inner .bars p:nth-of-type(4)::after {
   width: 95%;
-}
-
-#partner {
-  padding: 50px 0;
-  background: #082f6a;
-}
-#partner .inner ul {
-  display: flex;
-  justify-content: space-around;
-}
-#partner .inner ul li a {
-  display: block;
-  width: 120px;
-  height: 70px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  line-height: 70px;
-  text-align: center;
-  color: #fff;
 }
 
 #contact {
@@ -742,6 +831,12 @@ a {
   color: transparent;
   opacity: 0;
 }
+#footer .btnTop i {
+  transition: 0.3s;
+}
+#footer .btnTop:hover i {
+  transform: translateY(-15%);
+}
 
 @media screen and (max-width: 1179px) {
   .inner {
@@ -765,23 +860,23 @@ a {
   #visual .inner .text .btn {
     margin: 0 auto;
   }
-  #strategy {
+  #about {
     padding: 50px 0;
   }
-  #strategy .inner .wrap {
+  #about .inner .wrap {
     flex-wrap: wrap;
   }
-  #strategy .inner .wrap article {
+  #about .inner .wrap article {
     width: 50%;
   }
-  #strategy .inner .wrap article i {
+  #about .inner .wrap article i {
     width: 50px;
     height: 50px;
     line-height: 50px;
     font-size: 20px;
     margin-bottom: 20px;
   }
-  #strategy .inner .wrap article h3 {
+  #about .inner .wrap article h3 {
     margin-bottom: 10px;
   }
   #company .inner .text {
@@ -808,14 +903,8 @@ a {
   #work .inner .wrap article .text {
     width: 49%;
   }
-  #graph {
+  #news {
     width: 100%;
-  }
-  #partner {
-    width: 100%;
-  }
-  #partner .inner ul li a {
-    width: 70px;
   }
   #contact .inner .text span {
     display: inline-block;
@@ -828,13 +917,13 @@ a {
   }
 }
 @media screen and (max-width: 539px) {
-  #strategy .inner .wrap {
+  #about .inner .wrap {
     flex-wrap: nowrap;
   }
-  #strategy .inner .wrap article h3 {
+  #about .inner .wrap article h3 {
     font-size: 10px;
   }
-  #strategy .inner .wrap article p {
+  #about .inner .wrap article p {
     display: none;
   }
   #company .inner {
@@ -867,25 +956,21 @@ a {
   #work .inner .wrap article .text {
     width: 100%;
   }
-  #graph .inner {
+  #news .inner {
     flex-direction: column;
   }
-  #graph .inner .text {
-    width: 100%;
-    position: static;
-  }
-  #graph .inner .text h2 {
-    margin-bottom: 20px;
-  }
-  #graph .inner .text .btn {
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  #graph .inner .bars {
+  #news .inner .text {
     width: 100%;
     margin-bottom: 40px;
+  }
+  #news .inner .text h2 {
+    margin-bottom: 20px;
+  }
+  #news .inner .text p {
+    margin-bottom: 20px;
+  }
+  #news .inner .bars {
+    width: 100%;
   }
   #footer .inner {
     flex-wrap: wrap;

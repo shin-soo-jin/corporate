@@ -95,7 +95,6 @@ $mobile: 539px;
 				display: none;
 				width: 20px;
 				height: 20px;
-				position: absolute;
 				position: fixed;
 				top: 30px;
 				right: 0;
@@ -181,6 +180,52 @@ $mobile: 539px;
 			}
 		}
 	}
+
+	.scrollNavi {
+		position: fixed;
+		right: 1%;
+		top: 50%;
+		transform: translateY(-50%);
+		li {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			margin-bottom: 10px;
+			span {
+				margin-right: 15px;
+				font-size: 12px;
+				color: #aaa;
+				opacity: 0;
+				transition: 0.3s;
+			}
+			a {
+				display: block;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				line-height: 20px;
+				background: rgba(255, 255, 255, 0.5);
+				background: #ddd;
+				overflow: hidden;
+				transition: 0.3s;
+			}
+			&:hover {
+				a {
+					transform: scale(1.5);
+					background: #fff;
+				}
+				span {
+					opacity: 1;
+				}
+			}
+			&.on {
+				a {
+					transform: scale(1.5);
+					background: #fff;
+				}
+			}
+		}
+	}
 }
 
 #visual {
@@ -234,9 +279,14 @@ $mobile: 539px;
 			margin: 0 7px;
 			background: rgba(255, 255, 255, 0.5);
 			opacity: 1;
+			transform: scale(1);
+			&:hover {
+				transform: scale(1.2);
+			}
 		}
 		.swiper-pagination-bullet-active {
 			background: #fff;
+			transform: scale(1.2);
 		}
 	}
 	.swiper-button-next {
@@ -305,9 +355,19 @@ $mobile: 539px;
 	}
 }
 
-#strategy {
+#about {
 	width: 100%;
 	padding: 80px 0;
+	&.show {
+		.inner {
+			.wrap {
+				article {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+		}
+	}
 	.inner {
 		.wrap {
 			display: flex;
@@ -316,6 +376,21 @@ $mobile: 539px;
 				width: 280px;
 				padding: 20px;
 				text-align: center;
+				opacity: 0;
+				transform: translateY(-10%);
+				transition: 0.5s;
+				&:nth-of-type(1) {
+					transition-delay: 0s;
+				}
+				&:nth-of-type(2) {
+					transition-delay: 0.2s;
+				}
+				&:nth-of-type(3) {
+					transition-delay: 0.4s;
+				}
+				&:nth-of-type(4) {
+					transition-delay: 0.6s;
+				}
 				i {
 					width: 80px;
 					height: 80px;
@@ -342,12 +417,27 @@ $mobile: 539px;
 	width: 100%;
 	padding: 80px 0;
 	background: #f5f5f5;
+	&.show {
+		.inner {
+			.text {
+				transform: translateX(0%);
+				opacity: 1;
+			}
+			.vid {
+				transform: translateX(0%);
+				opacity: 1;
+			}
+		}
+	}
 	.inner {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		.text {
 			width: 49%;
+			transform: translateX(-10%);
+			transition: 1s;
+			opacity: 0;
 			h2 {
 				font-size: 20px;
 				margin-bottom: 40px;
@@ -364,6 +454,9 @@ $mobile: 539px;
 			width: 49%;
 			overflow: hidden;
 			position: relative;
+			transform: translateX(10%);
+			transition: 1s;
+			opacity: 0;
 			video {
 				width: 100%;
 				height: 100%;
@@ -390,6 +483,16 @@ $mobile: 539px;
 
 #work {
 	padding: 80px 0;
+	&.show {
+		.inner {
+			.wrap {
+				article {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+		}
+	}
 	.inner {
 		.wrap {
 			display: flex;
@@ -399,6 +502,18 @@ $mobile: 539px;
 				width: 380px;
 				overflow: hidden;
 				cursor: pointer;
+				opacity: 0;
+				transform: translateY(-10%);
+				transition: 0.5s;
+				&:nth-of-type(1) {
+					transition-delay: 0s;
+				}
+				&:nth-of-type(2) {
+					transition-delay: 0.2s;
+				}
+				&:nth-of-type(3) {
+					transition-delay: 0.4s;
+				}
 				.pic {
 					width: 100%;
 					height: 245px;
@@ -462,11 +577,23 @@ $mobile: 539px;
 	}
 }
 
-#graph {
+#news {
 	padding: 80px 0;
 	background: url(../img/graph.jpg) no-repeat 50% 58% /
 		cover;
 	position: relative;
+	&.show {
+		.inner {
+			.text {
+				opacity: 1;
+				transform: translateX(0%);
+			}
+			.bars {
+				opacity: 1;
+				transform: translateX(0%);
+			}
+		}
+	}
 	&::after {
 		content: "";
 		display: block;
@@ -486,6 +613,9 @@ $mobile: 539px;
 			width: 49%;
 			position: relative;
 			z-index: 2;
+			opacity: 1;
+			transform: translateX(-10%);
+			transition: 0.5s;
 			h2 {
 				font-size: 20px;
 				color: #fff;
@@ -503,6 +633,9 @@ $mobile: 539px;
 		.bars {
 			width: 49%;
 			z-index: 2;
+			opacity: 1;
+			transform: translateX(10%);
+			transition: 0.5s;
 			p {
 				font-size: 12px;
 				font-weight: bold;
@@ -548,28 +681,28 @@ $mobile: 539px;
 	}
 }
 
-#partner {
-	padding: 50px 0;
-	background: #082f6a;
-	.inner {
-		ul {
-			display: flex;
-			justify-content: space-around;
-			li {
-				a {
-					display: block;
-					width: 120px;
-					height: 70px;
-					background: rgba(255, 255, 255, 0.5);
-					border-radius: 50%;
-					line-height: 70px;
-					text-align: center;
-					color: #fff;
-				}
-			}
-		}
-	}
-}
+// #partner {
+// 	padding: 50px 0;
+// 	background: #082f6a;
+// 	.inner {
+// 		ul {
+// 			display: flex;
+// 			justify-content: space-around;
+// 			li {
+// 				a {
+// 					display: block;
+// 					width: 120px;
+// 					height: 70px;
+// 					background: rgba(255, 255, 255, 0.5);
+// 					border-radius: 50%;
+// 					line-height: 70px;
+// 					text-align: center;
+// 					color: #fff;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
 
 #contact {
 	padding: 80px 0;
@@ -755,6 +888,14 @@ $mobile: 539px;
 			color: transparent;
 			opacity: 0;
 		}
+		i {
+			transition: 0.3s;
+		}
+		&:hover {
+			i {
+				transform: translateY(-15%);
+			}
+		}
 	}
 }
 
@@ -791,7 +932,7 @@ $mobile: 539px;
 		}
 	}
 
-	#strategy {
+	#about {
 		padding: 50px 0;
 		.inner {
 			.wrap {
@@ -847,22 +988,22 @@ $mobile: 539px;
 		}
 	}
 
-	#graph {
+	#news {
 		width: 100%;
 	}
 
-	#partner {
-		width: 100%;
-		.inner {
-			ul {
-				li {
-					a {
-						width: 70px;
-					}
-				}
-			}
-		}
-	}
+	// #partner {
+	// 	width: 100%;
+	// 	.inner {
+	// 		ul {
+	// 			li {
+	// 				a {
+	// 					width: 70px;
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// }
 
 	#contact {
 		.inner {
@@ -893,7 +1034,7 @@ $mobile: 539px;
 
 // mobile
 @media screen and (max-width: $mobile) {
-	#strategy {
+	#about {
 		.inner {
 			.wrap {
 				flex-wrap: nowrap;
@@ -949,25 +1090,21 @@ $mobile: 539px;
 		}
 	}
 
-	#graph {
+	#news {
 		.inner {
 			flex-direction: column;
 			.text {
 				width: 100%;
-				position: static;
+				margin-bottom: 40px;
 				h2 {
 					margin-bottom: 20px;
 				}
-				.btn {
-					position: absolute;
-					bottom: 5%;
-					left: 50%;
-					transform: translateX(-50%);
+				p {
+					margin-bottom: 20px;
 				}
 			}
 			.bars {
 				width: 100%;
-				margin-bottom: 40px;
 			}
 		}
 	}

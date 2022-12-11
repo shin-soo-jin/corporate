@@ -14,13 +14,15 @@ const btnCall = document.querySelector(".btnCall");
 const gnbMo = document.querySelector("#gnbMo");
 
 const sections = document.querySelectorAll(".section");
-const scrollNavi = document.querySelectorAll(".scrollNavi li");
+const scrollNavi = document.querySelector(".scrollNavi");
+const scrollNavis = scrollNavi.querySelectorAll("li");
 
 let posArr = [];
 for (let el of sections) {
   posArr.push(el.offsetTop);
 }
-// (6) [0, 937, 1227, 1681, 2269, 2632] 아닌디디디디디디디디디
+
+// (5) [937, 1227, 1681, 2269, 2632] 아닌디디디디디디디디디
 
 // mobile menu
 btnCall.addEventListener("click", (e) => {
@@ -30,23 +32,28 @@ btnCall.addEventListener("click", (e) => {
   gnbMo.classList.toggle("on");
 })
 
+
 // scroll
 window.addEventListener("scroll", () => {
   let scroll = window.scrollY || window.pageYOffset;
 
-  // scrollNavi .on, sections .show
+  if (scroll >= posArr[0]) { scrollNavi.style.opacity = "1" } else {
+    scrollNavi.style.opacity = "0"
+  }
+
+  // scrollNavis .on, sections .show
   sections.forEach((el, index) => {
-    if (scroll >= posArr[index] - 500) {
-      scrollNavi.forEach((el, index) => {
+    if (scroll >= posArr[index]) {
+      scrollNavis.forEach((el, index) => {
         el.classList.remove('on');
       })
-      scrollNavi[index].classList.add('on');
+      scrollNavis[index].classList.add('on');
       sections[index].classList.add('show');
     }
   })
 
-  // scrollNavi click
-  scrollNavi.forEach((el, index) => {
+  // scrollNavis click
+  scrollNavis.forEach((el, index) => {
     el.addEventListener("click", (e) => {
       e.preventDefault();
 
@@ -57,4 +64,9 @@ window.addEventListener("scroll", () => {
       })
     })
   })
+
+  if (scroll >= posArr[1]) {
+    scrollNavi.style.opacity = "1.0";
+  }
+
 })

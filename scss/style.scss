@@ -6,6 +6,7 @@ $mobile: 539px;
 
 @import "sub_layout.scss";
 @import "news.scss";
+@import "join.scss";
 
 @import "mixin.scss";
 
@@ -70,12 +71,26 @@ a {
 						margin-left: 30px;
 						line-height: 60px;
 						a {
-							padding-bottom: 10px;
+							padding: 5px;
 							font-size: 16px;
 							font-weight: bold;
 							color: #fff;
+							position: relative;
+							&::after {
+								content: "";
+								width: 0%;
+								height: 2px;
+								background: #4b84db;
+								position: absolute;
+								top: 100%;
+								left: 50%;
+								transition: 0.3s;
+							}
 							&:hover {
-								border-bottom: 3px solid #4b84db;
+								&::after {
+									left: 0%;
+									width: 100%;
+								}
 							}
 						}
 					}
@@ -198,7 +213,7 @@ a {
 			span {
 				margin-right: 15px;
 				font-size: 12px;
-				color: #aaa;
+				color: #333;
 				opacity: 0;
 				transition: 0.3s;
 			}
@@ -208,7 +223,6 @@ a {
 				height: 10px;
 				border-radius: 50%;
 				line-height: 20px;
-				background: rgba(255, 255, 255, 0.5);
 				background: #ddd;
 				overflow: hidden;
 				transition: 0.3s;
@@ -216,7 +230,6 @@ a {
 			&:hover {
 				a {
 					transform: scale(1.5);
-					background: #fff;
 				}
 				span {
 					opacity: 1;
@@ -225,7 +238,7 @@ a {
 			&.on {
 				a {
 					transform: scale(1.5);
-					background: #fff;
+					background: #333;
 				}
 			}
 		}
@@ -599,7 +612,7 @@ a {
 				opacity: 1;
 				transform: translateX(0%);
 			}
-			.bars {
+			.chart {
 				opacity: 1;
 				transform: translateX(0%);
 			}
@@ -624,7 +637,7 @@ a {
 			width: 49%;
 			position: relative;
 			z-index: 2;
-			opacity: 1;
+			opacity: 0;
 			transform: translateX(-10%);
 			transition: 0.5s;
 			h2 {
@@ -641,10 +654,10 @@ a {
 				@include button;
 			}
 		}
-		.bars {
+		.chart {
 			width: 49%;
 			z-index: 2;
-			opacity: 1;
+			opacity: 0;
 			transform: translateX(10%);
 			transition: 0.5s;
 			p {
@@ -656,7 +669,7 @@ a {
 				span {
 					float: right;
 				}
-				&::before {
+				i {
 					content: "";
 					display: block;
 					width: 100%;
@@ -666,7 +679,7 @@ a {
 					top: 120%;
 					left: 0;
 				}
-				&::after {
+				b {
 					content: "";
 					display: block;
 					height: 10px;
@@ -675,20 +688,61 @@ a {
 					top: 120%;
 					left: 0;
 				}
-				&:nth-of-type(1)::after {
-					width: 20%;
+				&:nth-of-type(1) {
+					b {
+						animation: bar1 0.5s linear 0.5s forwards;
+					}
 				}
-				&:nth-of-type(2)::after {
-					width: 45%;
+				&:nth-of-type(2) {
+					b {
+						animation: bar2 1s linear 0.5s forwards;
+					}
 				}
-				&:nth-of-type(3)::after {
-					width: 75%;
+				&:nth-of-type(3) {
+					b {
+						animation: bar3 1.5s linear 0.5s forwards;
+					}
 				}
-				&:nth-of-type(4)::after {
-					width: 95%;
+				&:nth-of-type(4) {
+					b {
+						animation: bar4 2s linear 0.5s forwards;
+					}
 				}
 			}
 		}
+	}
+}
+
+@keyframes bar1 {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 20%;
+	}
+}
+@keyframes bar2 {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 45%;
+	}
+}
+@keyframes bar3 {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 75%;
+	}
+}
+@keyframes bar4 {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 95%;
 	}
 }
 
@@ -717,6 +771,8 @@ a {
 
 #contact {
 	padding: 80px 0;
+	background: url(../img/contact.jpg) no-repeat center
+		center/cover;
 	background: #f5f5f5;
 	.inner {
 		display: flex;
@@ -753,7 +809,6 @@ a {
 							width: 20%;
 							padding: 5px 0;
 							font-size: 16px;
-							font-weight: bold;
 							input[type="button"] {
 								display: block;
 								width: 100%;
@@ -765,7 +820,6 @@ a {
 								cursor: pointer;
 								transition: 0.3s;
 								&:hover {
-									border: 1px solid #333;
 									background: #fff;
 									color: #333;
 								}

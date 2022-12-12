@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NEWS - 기업형 레이아웃 - 포트폴리오</title>
+  <title>JOIN - 기업형 레이아웃 - 포트폴리오</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/d2d511e352.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
@@ -59,95 +59,75 @@
     </ul>
   </header>
 
-  <section class="content news">
+  <section class="content join">
     <div class="sub_visual"></div>
     <div class="inner">
-      <h1>NEWS<span>News Of Our Company</span></h1>
-      <table>
-        <tr>
-          <td>
-            <span>NEWS</span>
-          </td>
-          <td>
-            <strong>Lorem ipsum dolor sit amet.</strong>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quos expedita officia.</p>
-          </td>
-          <td>2022.12.11</td>
-        </tr>
-        <tr>
-          <td>
-            <span>NEWS</span>
-          </td>
-          <td>
-            <strong>Lorem ipsum dolor sit amet.</strong>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quos expedita officia.</p>
-          </td>
-          <td>2022.12.11</td>
-        </tr>
-        <tr>
-          <td>
-            <span>NEWS</span>
-          </td>
-          <td>
-            <strong>Lorem ipsum dolor sit amet.</strong>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quos expedita officia.</p>
-          </td>
-          <td>2022.12.11</td>
-        </tr>
-        <tr>
-          <td>
-            <span>NEWS</span>
-          </td>
-          <td>
-            <strong>Lorem ipsum dolor sit amet.</strong>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quos expedita officia.</p>
-          </td>
-          <td>2022.12.11</td>
-        </tr>
-        <tr>
-          <td>
-            <span>NEWS</span>
-          </td>
-          <td>
-            <strong>Lorem ipsum dolor sit amet.</strong>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quos expedita officia.</p>
-          </td>
-          <td>2022.12.11</td>
-        </tr>
-        <tr>
-          <td>
-            <span>NEWS</span>
-          </td>
-          <td>
-            <strong>Lorem ipsum dolor sit amet.</strong>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quos expedita officia.</p>
-          </td>
-          <td>2022.12.11</td>
-        </tr>
-        <tr>
-          <td>
-            <span>NEWS</span>
-          </td>
-          <td>
-            <strong>Lorem ipsum dolor sit amet.</strong>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quos expedita officia.</p>
-          </td>
-          <td>2022.12.11</td>
-        </tr>
-        <tr>
-          <td>
-            <span>NEWS</span>
-          </td>
-          <td>
-            <strong>Lorem ipsum dolor sit amet.</strong>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quos expedita officia.</p>
-          </td>
-          <td>2022.12.11</td>
-        </tr>
-      </table>
-      <div class="pagination">
-        <a href="#" class="on">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a>
-      </div>
+      <h1>JOIN<span>Join Our Company</span></h1>
+      <form action="">
+        <legend class="hidden">Terms of Use</legend>
+        <h2><label for="terms">Terms of Use</label></h2>
+        <textarea name="terms" id="terms" cols="30" rows="10">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit natus facere, libero doloremque sequi totam rerum ipsam tempora ullam facilis omnis quod modi quae laudantium, distinctio voluptas blanditiis et hic.
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem autem nihil rerum possimus accusantium! Ullam placeat fugiat asperiores eligendi vitae accusamus pariatur soluta, facere et minima doloribus aperiam ab unde.
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque quos perspiciatis maiores deserunt, deleniti asperiores placeat excepturi praesentium repellat quis cumque aspernatur accusantium dolor nobis eum laboriosam consequuntur, omnis corrupti!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit facere veritatis accusamus quisquam culpa eaque perspiciatis repudiandae. Animi quaerat ipsum dicta, eos corporis optio! Consequuntur nihil libero odit praesentium suscipit.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos provident dolor laboriosam, beatae vero, corporis maxime cumque atque quas ullam harum qui animi exercitationem reprehenderit ad iure impedit veritatis nemo?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quisquam ab nulla voluptatem aliquam, perferendis deleniti quidem est provident iste asperiores ut impedit veritatis. Iusto facere neque voluptate repudiandae exercitationem.
+        </textarea>
+
+        <input type="checkbox" name="agree" id="agree">
+        <label for="agree">Agree</label>
+
+        <h3>User Information</h3>
+        <table>
+          <caption class="hidden">User Information</caption>
+          <tr>
+            <th scope="row"><label for="name">NAME</label></th>
+            <td><input type="text" name="name" id="name"></td>
+          </tr>
+          <tr>
+            <th scope="row"><label for="birthday">BIRTHDAY</label></th>
+            <td><input type="date" name="birthday" id="birthday"></td>
+          </tr>
+          <tr>
+            <th scope="row"><label for="id">ID</label></th>
+            <td><input type="text" name="id" id="id" required></td>
+          </tr>
+          <tr>
+            <th scope="row"><label for="pwd1">PASSWORD</label></th>
+            <td><input type="password" name="pwd1" id="pwd1" required></td>
+          </tr>
+          <tr>
+            <th scope="row"><label for="pwd2">CONFIRM PASSWORD</label></th>
+            <td><input type="text" name="pwd2" id="pwd2" required></td>
+          </tr>
+          <tr>
+            <th scope="row"><label for="email">E-MAIL</label></th>
+            <td>
+              <input type="text" name="email" id="email">
+              @
+              <select name="e_address" id="e_address">
+                <option value="address">address</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><label for="phone1">PHONE NUMBER</label></th>
+            <td>
+              <select name="tel" id="tel">
+                <option value="010">010</option>
+              </select>
+              -
+              <input type="tel" name="phone1" id="phone1">
+              -
+              <input type="tel" name="phone2" id="phone2">
+            </td>
+          </tr>
+        </table>
+        <div class="joinBtn">
+          <input type="submit" value="SIGN UP">
+        </div>
+      </form>
     </div>
   </section>
 

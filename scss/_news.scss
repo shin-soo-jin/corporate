@@ -10,9 +10,21 @@
 		margin-bottom: 40px;
 		tr {
 			cursor: pointer;
-			border-bottom: 1px solid #eee;
+			border-bottom: 1px solid #ddd;
 			&:hover {
-				background: rgba(75, 133, 219, 0.1);
+				td {
+					&:nth-of-type(2) {
+						strong {
+							color: #3c6ab0;
+						}
+						p {
+							color: #3c6ab0;
+						}
+					}
+					&:nth-of-type(3) {
+						color: #3c6ab0;
+					}
+				}
 			}
 			td {
 				padding: 30px 0;
@@ -47,7 +59,7 @@
 		}
 	}
 	.pagination {
-		margin-bottom: 80px;
+		margin-bottom: 100px;
 		text-align: center;
 		a {
 			display: inline-block;

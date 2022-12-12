@@ -621,6 +621,10 @@ a {
 }
 #header .inner .menuWeb .util li a {
   color: #fff;
+  transition: 0.3s;
+}
+#header .inner .menuWeb .util li a:hover {
+  color: #4b84db;
 }
 #header .inner .menuMo .btnCall {
   display: none;
@@ -628,9 +632,9 @@ a {
   height: 20px;
   position: fixed;
   top: 30px;
-  right: 0;
   right: 3%;
   z-index: 3;
+  transition: 0.5s;
 }
 #header .inner .menuMo .btnCall span {
   display: block;
@@ -681,6 +685,7 @@ a {
   transform: rotate(45deg);
 }
 #header #gnbMo {
+  display: none;
   position: fixed;
   top: 0;
   right: -40%;
@@ -694,7 +699,7 @@ a {
 #header #gnbMo.on {
   right: 0;
 }
-#header #gnbMo ul li a {
+#header #gnbMo .gnb li a {
   display: block;
   padding: 20px;
   border-bottom: 1px solid #3c6ab0;
@@ -702,6 +707,27 @@ a {
   font-size: 16px;
   font-weight: bold;
   color: #fff;
+  transition: 0.3s;
+}
+#header #gnbMo .gnb li a:hover {
+  color: #4b84db;
+}
+#header #gnbMo .util {
+  display: flex;
+  position: absolute;
+  top: 14px;
+  left: 3%;
+}
+#header #gnbMo .util li {
+  margin-left: 20px;
+  line-height: 60px;
+}
+#header #gnbMo .util li a {
+  color: #fff;
+  transition: 0.3s;
+}
+#header #gnbMo .util li a:hover {
+  color: #4b84db;
 }
 #header .scrollNavi {
   opacity: 0;
@@ -1429,6 +1455,9 @@ a {
   #header .inner .menuMo .btnCall {
     display: block;
   }
+  #header #gnbMo {
+    display: block;
+  }
   #visual .inner .text {
     left: 50%;
     transform: translateX(-50%);
@@ -1545,7 +1574,7 @@ a {
   #news .inner .text p {
     margin-bottom: 20px;
   }
-  #news .inner .bars {
+  #news .inner .chart {
     width: 100%;
   }
   #footer .inner {

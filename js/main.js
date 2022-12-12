@@ -16,7 +16,7 @@ const gnbMo = document.querySelector("#gnbMo");
 const sections = document.querySelectorAll(".section");
 const scrollNavi = document.querySelector(".scrollNavi");
 const scrollNavis = scrollNavi.querySelectorAll("li");
-const base = -500;
+const base = -400;
 
 let posArr = [];
 for (let el of sections) {

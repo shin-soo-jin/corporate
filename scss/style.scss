@@ -7,6 +7,7 @@ $mobile: 539px;
 @import "sub_layout.scss";
 @import "news.scss";
 @import "join.scss";
+@import "company.scss";
 
 @import "mixin.scss";
 
@@ -103,6 +104,10 @@ a {
 					line-height: 60px;
 					a {
 						color: #fff;
+						transition: 0.3s;
+						&:hover {
+							color: #4b84db;
+						}
 					}
 				}
 			}
@@ -115,9 +120,9 @@ a {
 				height: 20px;
 				position: fixed;
 				top: 30px;
-				right: 0;
 				right: 3%;
 				z-index: 3;
+				transition: 0.5s;
 				span {
 					display: block;
 					width: 100%;
@@ -172,6 +177,7 @@ a {
 		}
 	}
 	#gnbMo {
+		display: none;
 		position: fixed;
 		top: 0;
 		right: -40%;
@@ -184,7 +190,7 @@ a {
 		&.on {
 			right: 0;
 		}
-		ul {
+		.gnb {
 			li {
 				a {
 					display: block;
@@ -194,6 +200,27 @@ a {
 					font-size: 16px;
 					font-weight: bold;
 					color: #fff;
+					transition: 0.3s;
+					&:hover {
+						color: #4b84db;
+					}
+				}
+			}
+		}
+		.util {
+			display: flex;
+			position: absolute;
+			top: 14px;
+			left: 3%;
+			li {
+				margin-left: 20px;
+				line-height: 60px;
+				a {
+					color: #fff;
+					transition: 0.3s;
+					&:hover {
+						color: #4b84db;
+					}
 				}
 			}
 		}
@@ -983,6 +1010,9 @@ a {
 				}
 			}
 		}
+		#gnbMo {
+			display: block;
+		}
 	}
 
 	#visual {
@@ -1168,7 +1198,7 @@ a {
 					margin-bottom: 20px;
 				}
 			}
-			.bars {
+			.chart {
 				width: 100%;
 			}
 		}

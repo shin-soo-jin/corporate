@@ -1,0 +1,52 @@
+.about {
+	.sub_visual {
+		background: url(../img/visual1.jpg) no-repeat center
+			center/cover;
+	}
+	h2 {
+		margin: 80px 0 40px;
+		text-align: center;
+		font-size: 30px;
+	}
+	article {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 200px;
+		margin-bottom: 20px;
+		&:nth-of-type(1) {
+			background: rgba(60, 106, 176, 0.1);
+		}
+		&:nth-of-type(2) {
+			background: rgba(60, 106, 176, 0.3);
+		}
+		&:nth-of-type(3) {
+			background: rgba(60, 106, 176, 0.1);
+		}
+		&:nth-of-type(4) {
+			background: rgba(60, 106, 176, 0.3);
+		}
+		i {
+			width: 10%;
+			font-size: 60px;
+			font-weight: normal;
+			color: #3c6ab0;
+		}
+		h3 {
+			width: 25%;
+			font-size: 20px;
+			color: #333;
+			text-align: left;
+		}
+		p {
+			width: 50%;
+			text-align: left;
+			color: #666;
+			strong {
+				display: block;
+				color: #3c6ab0;
+				margin-bottom: 20px;
+			}
+		}
+	}
+}

@@ -7,6 +7,8 @@ $mobile: 539px;
 @import "sub_layout.scss";
 @import "news.scss";
 @import "join.scss";
+@import "contact.scss";
+@import "about.scss";
 @import "company.scss";
 
 @import "mixin.scss";
@@ -122,7 +124,6 @@ a {
 				top: 30px;
 				right: 3%;
 				z-index: 3;
-				transition: 0.5s;
 				span {
 					display: block;
 					width: 100%;
@@ -134,7 +135,7 @@ a {
 					top: 50%;
 					right: 0;
 					margin-top: -2px;
-					transition: all 0.5s;
+					transition: 0.5s;
 				}
 				&::before {
 					content: "";
@@ -226,7 +227,7 @@ a {
 		}
 	}
 
-	.scrollNavi {
+	.scrollBtn {
 		opacity: 0;
 		position: fixed;
 		right: 1%;
@@ -529,6 +530,26 @@ a {
 					}
 				}
 			}
+			.pop {
+				width: 100%;
+				height: 100vh;
+				position: fixed;
+				top: 0;
+				left: 0;
+				background: rgba(0, 0, 0, 0.8);
+				overflow: hidden;
+				padding: 5vw;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				.btnClose {
+					position: absolute;
+					top: 50px;
+					right: 50px;
+					color: #fff;
+					cursor: pointer;
+				}
+			}
 		}
 	}
 }
@@ -717,22 +738,22 @@ a {
 				}
 				&:nth-of-type(1) {
 					b {
-						animation: bar1 0.5s linear 0.5s forwards;
+						width: 20%;
 					}
 				}
 				&:nth-of-type(2) {
 					b {
-						animation: bar2 1s linear 0.5s forwards;
+						width: 45%;
 					}
 				}
 				&:nth-of-type(3) {
 					b {
-						animation: bar3 1.5s linear 0.5s forwards;
+						width: 75%;
 					}
 				}
 				&:nth-of-type(4) {
 					b {
-						animation: bar4 2s linear 0.5s forwards;
+						width: 95%;
 					}
 				}
 			}
@@ -740,66 +761,8 @@ a {
 	}
 }
 
-@keyframes bar1 {
-	0% {
-		width: 0%;
-	}
-	100% {
-		width: 20%;
-	}
-}
-@keyframes bar2 {
-	0% {
-		width: 0%;
-	}
-	100% {
-		width: 45%;
-	}
-}
-@keyframes bar3 {
-	0% {
-		width: 0%;
-	}
-	100% {
-		width: 75%;
-	}
-}
-@keyframes bar4 {
-	0% {
-		width: 0%;
-	}
-	100% {
-		width: 95%;
-	}
-}
-
-// #partner {
-// 	padding: 50px 0;
-// 	background: #082f6a;
-// 	.inner {
-// 		ul {
-// 			display: flex;
-// 			justify-content: space-around;
-// 			li {
-// 				a {
-// 					display: block;
-// 					width: 120px;
-// 					height: 70px;
-// 					background: rgba(255, 255, 255, 0.5);
-// 					border-radius: 50%;
-// 					line-height: 70px;
-// 					text-align: center;
-// 					color: #fff;
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-
 #contact {
 	padding: 80px 0;
-	background: url(../img/contact.jpg) no-repeat center
-		center/cover;
 	background: #f5f5f5;
 	.inner {
 		display: flex;

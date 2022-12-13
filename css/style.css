@@ -62,6 +62,10 @@
 }
 #header_sub .inner .menuWeb .util li a {
   color: #333;
+  transition: 0.3s;
+}
+#header_sub .inner .menuWeb .util li a:hover {
+  color: #4b84db;
 }
 #header_sub .inner .menuMo .btnCall {
   display: none;
@@ -84,7 +88,7 @@
   top: 50%;
   right: 0;
   margin-top: -2px;
-  transition: all 0.5s;
+  transition: 0.5s;
 }
 #header_sub .inner .menuMo .btnCall::before {
   content: "";
@@ -122,6 +126,7 @@
   transform: rotate(45deg);
 }
 #header_sub #gnbMo {
+  display: none;
   position: fixed;
   top: 0;
   right: -40%;
@@ -135,7 +140,7 @@
 #header_sub #gnbMo.on {
   right: 0;
 }
-#header_sub #gnbMo ul li a {
+#header_sub #gnbMo .gnb li a {
   display: block;
   padding: 20px;
   border-bottom: 1px solid #3c6ab0;
@@ -143,8 +148,29 @@
   font-size: 16px;
   font-weight: bold;
   color: #fff;
+  transition: 0.3s;
 }
-#header_sub .scrollNavi {
+#header_sub #gnbMo .gnb li a:hover {
+  color: #4b84db;
+}
+#header_sub #gnbMo .util {
+  display: flex;
+  position: absolute;
+  top: 14px;
+  left: 3%;
+}
+#header_sub #gnbMo .util li {
+  margin-left: 20px;
+  line-height: 60px;
+}
+#header_sub #gnbMo .util li a {
+  color: #fff;
+  transition: 0.3s;
+}
+#header_sub #gnbMo .util li a:hover {
+  color: #4b84db;
+}
+#header_sub .scrollBtn {
   display: none;
   opacity: 0;
   position: fixed;
@@ -152,20 +178,20 @@
   top: 50%;
   transform: translateY(-50%);
 }
-#header_sub .scrollNavi li {
+#header_sub .scrollBtn li {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin-bottom: 10px;
 }
-#header_sub .scrollNavi li span {
+#header_sub .scrollBtn li span {
   margin-right: 15px;
   font-size: 12px;
   color: #333;
   opacity: 0;
   transition: 0.3s;
 }
-#header_sub .scrollNavi li a {
+#header_sub .scrollBtn li a {
   display: block;
   width: 10px;
   height: 10px;
@@ -175,17 +201,20 @@
   overflow: hidden;
   transition: 0.3s;
 }
-#header_sub .scrollNavi li:hover a {
+#header_sub .scrollBtn li:hover a {
   transform: scale(1.5);
 }
-#header_sub .scrollNavi li:hover span {
+#header_sub .scrollBtn li:hover span {
   opacity: 1;
 }
-#header_sub .scrollNavi li.on a {
+#header_sub .scrollBtn li.on a {
   transform: scale(1.5);
   background: #333;
 }
 
+.content {
+  margin-bottom: 100px;
+}
 .content .sub_visual {
   width: 100%;
   height: 250px;
@@ -195,7 +224,8 @@
 .content .inner h1 {
   font-size: 48px;
   line-height: 80%;
-  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid #000;
 }
 .content .inner h1 span {
   display: block;
@@ -321,6 +351,9 @@
   #header_sub .inner .menuMo .btnCall {
     display: block;
   }
+  #header_sub #gnbMo {
+    display: block;
+  }
   .content .sub_visual {
     height: 200px;
     margin-bottom: 80px;
@@ -361,8 +394,6 @@
 .news table {
   width: 100%;
   border-collapse: collapse;
-  border-top: 2px solid #000;
-  margin-bottom: 40px;
 }
 .news table tr {
   cursor: pointer;
@@ -406,7 +437,7 @@
   color: #888;
 }
 .news .pagination {
-  margin-bottom: 100px;
+  margin-top: 40px;
   text-align: center;
 }
 .news .pagination a {
@@ -452,14 +483,13 @@
 .join .sub_visual {
   background: url(../img/visual3.jpg) no-repeat center/cover;
 }
-.join .inner h2 {
+.join h2 {
   font-size: 24px;
-  border-top: 2px solid #000;
-  padding-top: 40px;
   margin-bottom: 20px;
   color: #333;
+  margin-top: 40px;
 }
-.join .inner textarea {
+.join textarea {
   resize: none;
   width: 100%;
   height: 100px;
@@ -468,25 +498,25 @@
   margin-bottom: 10px;
   border: 1px solid #ccc;
 }
-.join .inner label[for=agree] {
+.join label[for=agree] {
   margin-left: 5px;
 }
-.join .inner h3 {
+.join h3 {
   margin-top: 40px;
   margin-bottom: 20px;
   font-size: 24px;
   color: #333;
 }
-.join .inner table {
+.join table {
   border-collapse: collapse;
   width: 100%;
   border-top: 1px solid #ccc;
   margin-bottom: 40px;
 }
-.join .inner table tr {
+.join table tr {
   border-bottom: 1px solid #ccc;
 }
-.join .inner table tr th {
+.join table tr th {
   width: 20%;
   padding: 20px;
   border-right: 1px solid #ccc;
@@ -494,26 +524,25 @@
   font-weight: normal;
   color: #333;
 }
-.join .inner table tr td {
+.join table tr td {
   padding: 20px;
 }
-.join .inner table tr td input {
+.join table tr td input {
   width: 200px;
   height: 40px;
   border: 1px solid #ccc;
   text-indent: 15px;
 }
-.join .inner table tr td select {
+.join table tr td select {
   width: 200px;
   height: 40px;
   border: 1px solid #ccc;
   text-indent: 15px;
 }
-.join .inner .joinBtn {
+.join .joinBtn {
   text-align: center;
-  margin-bottom: 100px;
 }
-.join .inner .joinBtn input {
+.join .joinBtn input {
   width: 150px;
   height: 40px;
   border-radius: 5px;
@@ -522,9 +551,156 @@
   color: #333;
   cursor: pointer;
 }
-.join .inner .joinBtn input:hover {
+.join .joinBtn input:hover {
   background: #3c6ab0;
   color: #fff;
+}
+
+.contact .sub_visual {
+  background: url(../img/visual4.jpg) no-repeat center center/cover;
+}
+.contact #map {
+  width: 100%;
+  height: 500px;
+  margin: 80px 0;
+}
+.contact .wrap {
+  display: flex;
+}
+.contact .wrap .text {
+  width: 30%;
+}
+.contact .wrap .text h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.contact .wrap .text ul li {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.contact .wrap .text ul li i {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  color: #3c6ab0;
+  margin-right: 10px;
+}
+.contact .wrap form fieldset {
+  border: none;
+}
+.contact .wrap form fieldset legend {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.contact .wrap form fieldset b {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-right: 40px;
+}
+.contact .wrap form fieldset label {
+  margin-right: 20px;
+  font-size: 16px;
+  color: #333;
+}
+.contact .wrap form fieldset label input[type=checkbox] {
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+.contact .wrap form fieldset input[type=text] {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid #333;
+  text-indent: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.contact .wrap form fieldset textarea {
+  resize: none;
+  width: 100%;
+  height: 15vh;
+  border: none;
+  border-bottom: 1px solid #333;
+  text-indent: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.contact .wrap form fieldset input[type=button] {
+  display: block;
+  width: 20%;
+  height: 40px;
+  margin: 0 auto;
+  border: 1px solid #3c6ab0;
+  background: #3c6ab0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.contact .wrap form fieldset input[type=button]:hover {
+  background: #fff;
+  color: #3c6ab0;
+}
+
+.about .sub_visual {
+  background: url(../img/visual1.jpg) no-repeat center center/cover;
+}
+.about h2 {
+  margin: 80px 0 40px;
+  text-align: center;
+  font-size: 30px;
+}
+.about article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin-bottom: 20px;
+}
+.about article:nth-of-type(1) {
+  background: rgba(60, 106, 176, 0.1);
+}
+.about article:nth-of-type(2) {
+  background: rgba(60, 106, 176, 0.3);
+}
+.about article:nth-of-type(3) {
+  background: rgba(60, 106, 176, 0.1);
+}
+.about article:nth-of-type(4) {
+  background: rgba(60, 106, 176, 0.3);
+}
+.about article i {
+  width: 10%;
+  font-size: 60px;
+  font-weight: normal;
+  color: #3c6ab0;
+}
+.about article h3 {
+  width: 25%;
+  font-size: 20px;
+  color: #333;
+  text-align: left;
+}
+.about article p {
+  width: 50%;
+  text-align: left;
+  color: #666;
+}
+.about article p strong {
+  display: block;
+  color: #3c6ab0;
+  margin-bottom: 20px;
 }
 
 * {
@@ -634,7 +810,6 @@ a {
   top: 30px;
   right: 3%;
   z-index: 3;
-  transition: 0.5s;
 }
 #header .inner .menuMo .btnCall span {
   display: block;
@@ -647,7 +822,7 @@ a {
   top: 50%;
   right: 0;
   margin-top: -2px;
-  transition: all 0.5s;
+  transition: 0.5s;
 }
 #header .inner .menuMo .btnCall::before {
   content: "";
@@ -729,27 +904,27 @@ a {
 #header #gnbMo .util li a:hover {
   color: #4b84db;
 }
-#header .scrollNavi {
+#header .scrollBtn {
   opacity: 0;
   position: fixed;
   right: 1%;
   top: 50%;
   transform: translateY(-50%);
 }
-#header .scrollNavi li {
+#header .scrollBtn li {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin-bottom: 10px;
 }
-#header .scrollNavi li span {
+#header .scrollBtn li span {
   margin-right: 15px;
   font-size: 12px;
   color: #333;
   opacity: 0;
   transition: 0.3s;
 }
-#header .scrollNavi li a {
+#header .scrollBtn li a {
   display: block;
   width: 10px;
   height: 10px;
@@ -759,13 +934,13 @@ a {
   overflow: hidden;
   transition: 0.3s;
 }
-#header .scrollNavi li:hover a {
+#header .scrollBtn li:hover a {
   transform: scale(1.5);
 }
-#header .scrollNavi li:hover span {
+#header .scrollBtn li:hover span {
   opacity: 1;
 }
-#header .scrollNavi li.on a {
+#header .scrollBtn li.on a {
   transform: scale(1.5);
   background: #333;
 }
@@ -1019,6 +1194,26 @@ a {
 #company .inner .vid .vidBtn:hover i {
   font-size: 24px;
 }
+#company .inner .vid .pop {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  padding: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#company .inner .vid .pop .btnClose {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  color: #fff;
+  cursor: pointer;
+}
 
 #work {
   padding: 80px 0;
@@ -1206,53 +1401,20 @@ a {
   left: 0;
 }
 #news .inner .chart p:nth-of-type(1) b {
-  animation: bar1 0.5s linear 0.5s forwards;
+  width: 20%;
 }
 #news .inner .chart p:nth-of-type(2) b {
-  animation: bar2 1s linear 0.5s forwards;
+  width: 45%;
 }
 #news .inner .chart p:nth-of-type(3) b {
-  animation: bar3 1.5s linear 0.5s forwards;
+  width: 75%;
 }
 #news .inner .chart p:nth-of-type(4) b {
-  animation: bar4 2s linear 0.5s forwards;
+  width: 95%;
 }
 
-@keyframes bar1 {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 20%;
-  }
-}
-@keyframes bar2 {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 45%;
-  }
-}
-@keyframes bar3 {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 75%;
-  }
-}
-@keyframes bar4 {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 95%;
-  }
-}
 #contact {
   padding: 80px 0;
-  background: url(../img/contact.jpg) no-repeat center center/cover;
   background: #f5f5f5;
 }
 #contact .inner {

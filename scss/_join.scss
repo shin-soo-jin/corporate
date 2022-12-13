@@ -3,82 +3,76 @@
 		background: url(../img/visual3.jpg) no-repeat center /
 			cover;
 	}
-	.inner {
-		h2 {
-			font-size: 24px;
-			border-top: 2px solid #000;
-			padding-top: 40px;
-			margin-bottom: 20px;
-			color: #333;
-		}
-		textarea {
-			resize: none;
-			width: 100%;
-			height: 100px;
-			padding: 10px;
-			font-size: 12px;
-			margin-bottom: 10px;
-			border: 1px solid #ccc;
-		}
-		label[for="agree"] {
-			margin-left: 5px;
-		}
-		h3 {
-			margin-top: 40px;
-			margin-bottom: 20px;
-			font-size: 24px;
-			color: #333;
-		}
-		table {
-			border-collapse: collapse;
-			width: 100%;
-			border-top: 1px solid #ccc;
-			margin-bottom: 40px;
-			tr {
-				border-bottom: 1px solid #ccc;
-				th {
-					width: 20%;
-					padding: 20px;
-					border-right: 1px solid #ccc;
-					text-align: left;
-					font-weight: normal;
-					color: #333;
-				}
-				td {
-					padding: 20px;
-					input {
-						width: 200px;
-						height: 40px;
-						border: 1px solid #ccc;
-						text-indent: 15px;
-					}
-					select {
-						width: 200px;
-						height: 40px;
-						border: 1px solid #ccc;
-						text-indent: 15px;
-					}
-				}
-			}
-		}
-		.joinBtn {
-			text-align: center;
-			margin-bottom: 100px;
-			input {
-				width: 150px;
-				height: 40px;
-				border-radius: 5px;
-				border: 1px solid #ccc;
-				background: #fff;
+	h2 {
+		font-size: 24px;
+		margin-bottom: 20px;
+		color: #333;
+		margin-top: 40px;
+	}
+	textarea {
+		resize: none;
+		width: 100%;
+		height: 100px;
+		padding: 10px;
+		font-size: 12px;
+		margin-bottom: 10px;
+		border: 1px solid #ccc;
+	}
+	label[for="agree"] {
+		margin-left: 5px;
+	}
+	h3 {
+		margin-top: 40px;
+		margin-bottom: 20px;
+		font-size: 24px;
+		color: #333;
+	}
+	table {
+		border-collapse: collapse;
+		width: 100%;
+		border-top: 1px solid #ccc;
+		margin-bottom: 40px;
+		tr {
+			border-bottom: 1px solid #ccc;
+			th {
+				width: 20%;
+				padding: 20px;
+				border-right: 1px solid #ccc;
+				text-align: left;
+				font-weight: normal;
 				color: #333;
-				cursor: pointer;
-				&:hover {
-					background: #3c6ab0;
-					color: #fff;
+			}
+			td {
+				padding: 20px;
+				input {
+					width: 200px;
+					height: 40px;
+					border: 1px solid #ccc;
+					text-indent: 15px;
+				}
+				select {
+					width: 200px;
+					height: 40px;
+					border: 1px solid #ccc;
+					text-indent: 15px;
 				}
 			}
 		}
-
-		//
+	}
+	.joinBtn {
+		text-align: center;
+		input {
+			width: 150px;
+			height: 40px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			background: #fff;
+			color: #333;
+			cursor: pointer;
+			&:hover {
+				background: #3c6ab0;
+				color: #fff;
+			}
+		}
 	}
 }

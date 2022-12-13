@@ -7,11 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CONTACT - 기업형 레이아웃 - 포트폴리오</title>
   <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3238622f3467567f303c11a3e946d910"></script>
   <script src="https://kit.fontawesome.com/d2d511e352.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script defer src="js/main.js"></script>
   <script defer src="js/anime.js"></script>
+  <script defer src="js/contact.js"></script>
 </head>
 
 <body id="body">
@@ -39,16 +41,20 @@
       </div>
     </div>
     <nav id="gnbMo">
-      <ul>
+      <ul class="gnb">
         <li><a href="about.html">ABOUT</a></li>
         <li><a href="company.html">COMPANY</a></li>
         <li><a href="work.html">WORK</a></li>
         <li><a href="news.html">NEWS</a></li>
         <li><a href="contact.html">CONTACT</a></li>
       </ul>
+      <ul class="util">
+        <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+        <li><a href="join.html"><i class="fas fa-user"></i></a></li>
+      </ul>
     </nav>
 
-    <ul class="scrollNavi">
+    <ul class="scrollBtn">
       <li><span>ABOUT</span><a href="#"></a></li>
       <li><span>COMPANY</span><a href="#"></a></li>
       <li><span>WORK</span><a href="#"></a></li>
@@ -57,11 +63,51 @@
     </ul>
   </header>
 
-  <section class="content">
+  <section class="content contact">
     <div class="sub_visual"></div>
     <div class="inner">
       <h1>CONTACT<span>CONTACT OUR COMPANY</span></h1>
-      <!-- 컨텐츠가 들어가는 부분 -->
+      <div id="map"></div>
+
+      <div class="wrap">
+        <div class="text">
+          <h2>INFO</h2>
+          <ul>
+            <li><i class="fas fa-phone-alt"></i>070-123-5678</li>
+            <li><i class="far fa-clock"></i>9AM - 6PM</li>
+            <li><i class="fas fa-map-marker-alt"></i>SEOUL, KOREA</li>
+            <li><i class="fa-solid fa-envelope"></i>B@B.com</li>
+          </ul>
+        </div>
+
+        <form action="">
+          <fieldset>
+            <legend>CONTACT OUR COMPANY</legend>
+
+            <b>CATEGORY</b>
+            <label for="pc">
+              <input type="checkbox" name="category" id="pc" value="pc">PC
+            </label>
+            <label for="mobile">
+              <input type="checkbox" name="category" id="mobile" value="mobile">MOBILE
+            </label>
+            <label for="responsive">
+              <input type="checkbox" name="category" id="responsive" value="responsive">RESPONSIVE
+            </label>
+
+            <label for="name" class="hidden">NAME</label>
+            <input type="text" name="name" id="name" placeholder="NAME">
+
+            <label for="email" class="hidden">E-MAIL</label>
+            <input type="text" name="email" id="email" placeholder="E-MAIL">
+
+            <label for="message" class="hidden">MESSAGE</label>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="MESSAGE"></textarea>
+
+            <input type="button" value="SEND">
+          </fieldset>
+        </form>
+      </div>
     </div>
   </section>
 

@@ -573,7 +573,7 @@
 .contact .wrap .text h2 {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 .contact .wrap .text ul li {
   margin-bottom: 20px;
@@ -598,7 +598,7 @@
 .contact .wrap form fieldset legend {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 .contact .wrap form fieldset b {
   font-size: 16px;
@@ -653,6 +653,9 @@
   color: #3c6ab0;
 }
 
+.about {
+  margin-bottom: 0px;
+}
 .about .sub_visual {
   background: url(../img/visual1.jpg) no-repeat center center/cover;
 }
@@ -661,46 +664,113 @@
   text-align: center;
   font-size: 30px;
 }
-.about article {
+.about .value {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+.about .value article {
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
+  width: 49%;
   height: 200px;
   margin-bottom: 20px;
 }
-.about article:nth-of-type(1) {
-  background: rgba(60, 106, 176, 0.1);
-}
-.about article:nth-of-type(2) {
+.about .value article:nth-of-type(1) {
   background: rgba(60, 106, 176, 0.3);
 }
-.about article:nth-of-type(3) {
+.about .value article:nth-of-type(2) {
   background: rgba(60, 106, 176, 0.1);
 }
-.about article:nth-of-type(4) {
+.about .value article:nth-of-type(3) {
+  background: rgba(60, 106, 176, 0.1);
+}
+.about .value article:nth-of-type(4) {
   background: rgba(60, 106, 176, 0.3);
 }
-.about article i {
-  width: 10%;
-  font-size: 60px;
+.about .value article i {
+  width: 20%;
+  text-align: center;
+  font-size: 50px;
   font-weight: normal;
   color: #3c6ab0;
 }
-.about article h3 {
-  width: 25%;
-  font-size: 20px;
-  color: #333;
-  text-align: left;
-}
-.about article p {
-  width: 50%;
+.about .value article p {
+  width: 60%;
   text-align: left;
   color: #666;
 }
-.about article p strong {
+.about .value article p strong {
   display: block;
-  color: #3c6ab0;
+  font-size: 20px;
+  color: #333;
   margin-bottom: 20px;
+}
+.about .member {
+  background: #e1e1e1;
+  padding: 50px 0;
+}
+.about .member .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.about .member .inner .text {
+  width: 20%;
+}
+.about .member .inner .text h3 {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+.about .member .inner .team {
+  width: 75%;
+}
+.about .member .inner .team ul {
+  display: flex;
+}
+.about .member .inner .team ul li {
+  position: relative;
+  width: 25%;
+  padding-bottom: 10px;
+  margin-left: 20px;
+  background: #fff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  cursor: pointer;
+}
+.about .member .inner .team ul li .pic {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  filter: grayscale(1);
+  transition: 0.5s;
+}
+.about .member .inner .team ul li .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about .member .inner .team ul li span {
+  position: absolute;
+  top: 220px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+}
+.about .member .inner .team ul li:hover .pic {
+  filter: grayscale(0);
+}
+.about .member .inner .team ul li p {
+  color: #666;
+}
+.about .member .inner .team ul li p strong {
+  display: block;
+  margin: 10px 0 10px;
+  color: #333;
 }
 
 * {
@@ -731,6 +801,11 @@ a {
   opacity: 0;
 }
 
+@media screen and (max-width: 1179px) {
+  .inner {
+    width: 95%;
+  }
+}
 #header {
   width: 100%;
   padding: 10px 0;
@@ -1603,9 +1678,6 @@ a {
 }
 
 @media screen and (max-width: 1179px) {
-  .inner {
-    width: 95%;
-  }
   #header {
     position: fixed;
     background: rgba(0, 0, 0, 0.4);

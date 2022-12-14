@@ -1,0 +1,15 @@
+.inner {
+	width: 1180px;
+	margin: 0 auto;
+}
+.hidden {
+	position: absolute;
+	top: -999999px;
+	opacity: 0;
+}
+
+@media screen and (max-width: $tablet) {
+	.inner {
+		width: 95%;
+	}
+}

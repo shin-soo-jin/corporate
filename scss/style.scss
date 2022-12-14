@@ -11,34 +11,9 @@ $mobile: 539px;
 @import "about.scss";
 @import "company.scss";
 
+@import "reset.scss";
+@import "common.scss";
 @import "mixin.scss";
-
-// reset
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: "Noto Sans", sans-serif;
-}
-ul,
-ol,
-li {
-	list-style: none;
-}
-a {
-	text-decoration: none;
-}
-
-// common
-.inner {
-	width: 1180px;
-	margin: 0 auto;
-}
-.hidden {
-	position: absolute;
-	top: -999999px;
-	opacity: 0;
-}
 
 // web
 #header {
@@ -956,9 +931,6 @@ a {
 
 // tablet
 @media screen and (max-width: $tablet) {
-	.inner {
-		width: 95%;
-	}
 	#header {
 		position: fixed;
 		background: rgba(0, 0, 0, 0.4);
@@ -1049,19 +1021,6 @@ a {
 	#news {
 		width: 100%;
 	}
-
-	// #partner {
-	// 	width: 100%;
-	// 	.inner {
-	// 		ul {
-	// 			li {
-	// 				a {
-	// 					width: 70px;
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
 
 	#contact {
 		.inner {
@@ -1190,5 +1149,4 @@ a {
 			bottom: 2%;
 		}
 	}
-	//
 }

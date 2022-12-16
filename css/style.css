@@ -563,7 +563,6 @@
   width: 100%;
   height: 500px;
   margin: 80px 0;
-  border: 1px solid #000;
 }
 .contact .wrap {
   display: flex;
@@ -688,19 +687,21 @@
 .about .sub_visual {
   background: url(../img/visual1.jpg) no-repeat center center/cover;
 }
-.about h2 {
+.about .value {
+  margin-bottom: 80px;
+}
+.about .value h2 {
   margin: 80px 0 40px;
   text-align: center;
   font-size: 30px;
   line-height: 100%;
 }
-.about .value {
+.about .value .wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 80px;
 }
-.about .value article {
+.about .value .wrap div {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -708,31 +709,31 @@
   padding: 30px 0;
   margin-bottom: 20px;
 }
-.about .value article:nth-of-type(1) {
+.about .value .wrap div:nth-of-type(1) {
   background: rgba(60, 106, 176, 0.3);
 }
-.about .value article:nth-of-type(2) {
+.about .value .wrap div:nth-of-type(2) {
   background: rgba(60, 106, 176, 0.1);
 }
-.about .value article:nth-of-type(3) {
+.about .value .wrap div:nth-of-type(3) {
   background: rgba(60, 106, 176, 0.1);
 }
-.about .value article:nth-of-type(4) {
+.about .value .wrap div:nth-of-type(4) {
   background: rgba(60, 106, 176, 0.3);
 }
-.about .value article i {
+.about .value .wrap div i {
   width: 20%;
   text-align: center;
   font-size: 50px;
   font-weight: normal;
   color: #3c6ab0;
 }
-.about .value article p {
+.about .value .wrap div p {
   width: 60%;
   text-align: left;
   color: #666;
 }
-.about .value article p strong {
+.about .value .wrap div p strong {
   display: block;
   font-size: 20px;
   color: #333;
@@ -740,24 +741,57 @@
 }
 .about .member {
   background: #e1e1e1;
-  padding: 50px 0;
+  width: 100%;
+  height: 500px;
+  padding-top: 50px;
 }
 .about .member .inner {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: top;
 }
 .about .member .inner .text {
   width: 20%;
+  margin-top: 70px;
 }
-.about .member .inner .text h3 {
+.about .member .inner .text h2 {
   font-size: 30px;
   margin-bottom: 40px;
 }
 .about .member .inner .team {
   width: 75%;
+  position: relative;
+}
+.about .member .inner .team span {
+  width: 100%;
+  margin-left: 20px;
+  display: flex;
+  justify-content: start;
+}
+.about .member .inner .team span a {
+  margin-right: 10px;
+  padding: 10px;
+  font-size: 20px;
+  line-height: 100%;
+  font-weight: bold;
+  color: #999;
+  transition: 0.3s;
+}
+.about .member .inner .team span a:hover {
+  color: #111;
+}
+.about .member .inner .team span a.on {
+  color: #fff;
+  background: #111;
 }
 .about .member .inner .team ul {
+  width: 100%;
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 0;
+}
+.about .member .inner .team ul.on {
   display: flex;
 }
 .about .member .inner .team ul li {
@@ -767,64 +801,75 @@
   background: #fff;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   text-align: center;
-  cursor: pointer;
 }
 .about .member .inner .team ul li .pic {
   width: 100%;
   height: 250px;
   overflow: hidden;
-  filter: grayscale(1);
-  transition: 0.5s;
 }
 .about .member .inner .team ul li .pic img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-.about .member .inner .team ul li:hover .pic {
-  filter: grayscale(0);
+  filter: grayscale(1);
 }
 .about .member .inner .team ul li p {
   color: #666;
 }
 .about .member .inner .team ul li p strong {
+  margin: 10px 0;
   display: block;
-  margin: 10px 0 10px;
   color: #333;
 }
 
 @media screen and (max-width: 1179px) {
-  .about h2 {
-    margin: 40px 0 40px;
-  }
   .about .value {
     flex-direction: column;
   }
-  .about .value article {
+  .about .value h2 {
+    margin: 40px 0 40px;
+  }
+  .about .value .wrap div {
     width: 100%;
+  }
+  .about .member {
+    height: 700px;
+    padding-top: 50px;
   }
   .about .member .inner {
     flex-direction: column;
   }
   .about .member .inner .text {
-    text-align: center;
     width: 100%;
+    text-align: center;
     margin-bottom: 40px;
+    margin-top: 0;
   }
-  .about .member .inner .text h3 {
+  .about .member .inner .text h2 {
     margin-bottom: 20px;
   }
   .about .member .inner .team {
     width: 100%;
   }
+  .about .member .inner .team span {
+    margin-left: 10px;
+  }
+  .about .member .inner .team ul li {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 @media screen and (max-width: 539px) {
+  .about .member {
+    height: 1500px;
+  }
   .about .member .inner .team ul {
     flex-direction: column;
   }
   .about .member .inner .team ul li {
     width: 100%;
     margin-left: 0;
+    margin-right: 0;
     padding-bottom: 0px;
     margin-bottom: 20px;
     display: flex;
@@ -835,9 +880,116 @@
   }
   .about .member .inner .team ul li p {
     width: 50%;
+    padding: 10px;
   }
   .about .member .inner .team ul li p strong {
     font-size: 20px;
+  }
+}
+.youtube {
+  overflow: hidden;
+}
+.youtube .sub_visual {
+  background: url(../img/sub_company_bg.jpg) no-repeat center/cover;
+}
+.youtube .inner .vidList {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.youtube .inner .vidList article {
+  position: relative;
+  width: calc((100% - 40px) / 3);
+  margin-bottom: 20px;
+  overflow: hidden;
+  font-size: 0;
+  cursor: pointer;
+  transition: 0.5s;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+.youtube .inner .vidList article:hover {
+  transform: scale(1.5);
+  z-index: 1;
+}
+.youtube .inner .vidList article .pic {
+  display: block;
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+}
+.youtube .inner .vidList article .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.youtube .inner .vidList article .text {
+  padding: 5px 0;
+  background: #fff;
+}
+.youtube .inner .vidList article .text h2 {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+.youtube .inner .vidList article .text span {
+  margin-right: 20px;
+  font-size: 12px;
+  color: #666;
+}
+.youtube .inner .vidList article .text em {
+  font-size: 12px;
+  color: #999;
+}
+.youtube .inner .vidList .pop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 5vw 10vw;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+.youtube .inner .vidList .pop .btnClose {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1179px) {
+  .company .inner .vidList article {
+    width: 49%;
+  }
+  .company .inner .vidList article:hover {
+    transform: scale(1.3);
+  }
+  .company .inner .vidList article .pic {
+    height: 250px;
+  }
+  .company .inner .vidList .pop {
+    padding: 15vw;
+  }
+  .company .inner .vidList .pop .btnClose {
+    top: 10%;
+  }
+}
+@media screen and (max-width: 539px) {
+  .company .inner .vidList article {
+    width: 100%;
+  }
+  .company .inner .vidList article:hover {
+    transform: scale(1.1);
+  }
+  .company .inner .vidList .pop {
+    padding: 25vw 15vw;
+  }
+  .company .inner .vidList .pop .btnClose {
+    top: 10%;
   }
 }
 * {
@@ -1205,6 +1357,7 @@ a {
 }
 
 #about {
+  overflow: hidden;
   width: 100%;
   padding: 80px 0;
 }
@@ -1255,6 +1408,7 @@ a {
 }
 
 #company {
+  overflow: hidden;
   width: 100%;
   padding: 80px 0;
   background: #f5f5f5;
@@ -1325,39 +1479,46 @@ a {
   height: 80px;
   background: rgb(255, 255, 255);
   border-radius: 50%;
-  text-align: center;
-  line-height: 80px;
-  font-size: 20px;
-  color: #000;
 }
 #company .inner .vid .vidBtn i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: #000;
   transition: 0.3s;
+}
+#company .inner .vid .vidBtn .fa-pause {
+  opacity: 0;
 }
 #company .inner .vid .vidBtn:hover i {
   font-size: 24px;
 }
-#company .inner .vid .pop {
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.8);
-  overflow: hidden;
-  padding: 5vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#company .inner .vid .vidBtn.playing {
+  opacity: 0;
 }
-#company .inner .vid .pop .btnClose {
-  position: absolute;
-  top: 50px;
-  right: 50px;
-  color: #fff;
-  cursor: pointer;
+#company .inner .vid .vidBtn.playing .fa-play {
+  opacity: 0;
+}
+#company .inner .vid .vidBtn.playing .fa-pause {
+  opacity: 1;
+}
+#company .inner .vid .vidBtn.playing:hover {
+  opacity: 1;
+}
+#company .inner .vid .vidBtn.pausing {
+  opacity: 1;
+}
+#company .inner .vid .vidBtn.pausing .fa-play {
+  opacity: 1;
+}
+#company .inner .vid .vidBtn.pausing .fa-pause {
+  opacity: 0;
 }
 
 #work {
+  overflow: hidden;
   padding: 80px 0;
 }
 #work.show .inner .wrap article {
@@ -1444,6 +1605,7 @@ a {
 }
 
 #news {
+  overflow: hidden;
   padding: 80px 0;
   background: url(../img/news.jpg) no-repeat 50% 58%/cover;
   position: relative;

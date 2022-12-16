@@ -18,6 +18,7 @@ const scrollBtn = document.querySelector(".scrollBtn");
 const scrollBtnLis = scrollBtn.querySelectorAll("li");
 const base = -300;
 
+const video = document.querySelector("video");
 const vidBtn = document.querySelector(".vidBtn");
 
 let posArr = [];
@@ -67,4 +68,18 @@ window.addEventListener("scroll", () => {
   })
 })
 
-// 비디오 클릭시 유튜브 팝업
+// 비디오 재생
+vidBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  vidBtn.classList.remove("playing");
+  vidBtn.classList.remove("pausing");
+
+  if (video.paused) {
+    vidBtn.classList.add("playing");
+    video.play();
+  } else {
+    vidBtn.classList.add("pausing");
+    video.pause();
+  }
+})

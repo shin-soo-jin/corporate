@@ -1,3 +1,4 @@
+const body = document.querySelector("body");
 const vidList = document.querySelector(".vidList");
 const key = "AIzaSyCaXRXk4IImstZdfY92MFZLzPLaz0VxlRc";
 const playlistId = "PL5lm99t4rEC4v0vphLBO7rm2f9mR_nMeY";
@@ -58,6 +59,7 @@ vidList.addEventListener("click", (e) => {
   `;
 
   vidList.append(pop);
+  body.style.overflow = "hidden";
 })
 
 vidList.addEventListener("click", (e) => {
@@ -66,6 +68,9 @@ vidList.addEventListener("click", (e) => {
   if (pop) {
     const close = pop.querySelector("span i");
 
-    if (e.target == close) pop.remove();
+    if (e.target == close) {
+      pop.remove();
+      body.style.overflow = "auto";
+    }
   }
 })

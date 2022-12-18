@@ -21,6 +21,8 @@ const base = -300;
 const video = document.querySelector("video");
 const vidBtn = document.querySelector(".vidBtn");
 
+const btnTop = document.querySelector(".btnTop")
+
 let posArr = [];
 for (let el of sections) {
   posArr.push(el.offsetTop);

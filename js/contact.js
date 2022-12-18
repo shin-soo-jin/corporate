@@ -41,3 +41,8 @@ function setZoomable(zoomable) {
   // 마우스 휠로 지도 확대,축소 가능여부를 설정합니다
   map.setZoomable(zoomable);
 }
+
+// 브라우저 크기 변경시 지도 가운데 마커 위치
+window.onresize = () => {
+  map.setCenter(markerPosition);
+}

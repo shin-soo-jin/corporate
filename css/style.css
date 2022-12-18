@@ -1119,6 +1119,16 @@
   margin-top: 100px;
 }
 
+@media screen and (max-width: 1179px) {
+  .gallery .inner #wrap #list .item {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 539px) {
+  .gallery .inner #wrap #list .item {
+    width: 100%;
+  }
+}
 * {
   margin: 0;
   padding: 0;

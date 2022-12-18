@@ -7,11 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GALLERY - 기업형 레이아웃 - 포트폴리오</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
   <script src="https://kit.fontawesome.com/d2d511e352.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script defer src="js/main.js"></script>
   <script defer src="js/anime.js"></script>
+  <script defer src="js/flickr.js"></script>
 </head>
 
 <body id="body">
@@ -61,11 +62,22 @@
     </ul>
   </header>
 
-  <section class="content">
+  <section class="content gallery">
     <div class="sub_visual"></div>
     <div class="inner">
       <h1>GALLERY<span>MEET Gallery</span></h1>
-      <!-- 컨텐츠가 들어가는 부분 -->
+
+      <div id="searchBox">
+        <input type="text" name="search" id="search" placeholder="이미지 검색">
+        <a href="#" class="btnSearch"><i class="fa-solid fa-magnifying-glass"></i></a>
+      </div>
+
+      <div id="wrap">
+        <img src="img/loading.gif" alt="로딩중 입니다" class="loading">
+        <ul id="list"></ul>
+        </ul>
+      </div>
+
     </div>
   </section>
 

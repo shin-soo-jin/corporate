@@ -213,13 +213,16 @@
 }
 
 .content {
-  margin-bottom: 100px;
+  padding-bottom: 100px;
 }
 .content .sub_visual {
   width: 100%;
   height: 250px;
   background: #ccc;
   margin-bottom: 100px;
+}
+.content .inner {
+  min-height: 500px;
 }
 .content .inner h1 {
   font-size: 48px;
@@ -682,7 +685,7 @@
   }
 }
 .about {
-  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 .about .sub_visual {
   background: url(../img/visual1.jpg) no-repeat center center/cover;
@@ -900,14 +903,12 @@
   justify-content: space-between;
 }
 .youtube .inner .vidList article {
-  position: relative;
   width: calc((100% - 40px) / 3);
   margin-bottom: 20px;
-  overflow: hidden;
-  font-size: 0;
-  cursor: pointer;
-  transition: 0.5s;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 0;
+  transition: 0.5s;
 }
 .youtube .inner .vidList article:hover {
   transform: scale(1.5);
@@ -925,7 +926,7 @@
   object-fit: cover;
 }
 .youtube .inner .vidList article .text {
-  padding: 5px 0;
+  padding: 5px;
   background: #fff;
 }
 .youtube .inner .vidList article .text h2 {
@@ -962,36 +963,162 @@
 }
 
 @media screen and (max-width: 1179px) {
-  .company .inner .vidList article {
+  .youtube .inner .vidList article {
     width: 49%;
   }
-  .company .inner .vidList article:hover {
+  .youtube .inner .vidList article:hover {
     transform: scale(1.3);
   }
-  .company .inner .vidList article .pic {
+  .youtube .inner .vidList article .pic {
     height: 250px;
   }
-  .company .inner .vidList .pop {
+  .youtube .inner .vidList .pop {
     padding: 15vw;
   }
-  .company .inner .vidList .pop .btnClose {
+  .youtube .inner .vidList .pop .btnClose {
     top: 10%;
   }
 }
 @media screen and (max-width: 539px) {
-  .company .inner .vidList article {
+  .youtube .inner .vidList article {
     width: 100%;
   }
-  .company .inner .vidList article:hover {
+  .youtube .inner .vidList article:hover {
     transform: scale(1.1);
   }
-  .company .inner .vidList .pop {
+  .youtube .inner .vidList .pop {
     padding: 25vw 15vw;
   }
-  .company .inner .vidList .pop .btnClose {
+  .youtube .inner .vidList .pop .btnClose {
     top: 10%;
   }
 }
+.gallery .sub_visual {
+  background: url(../img/work1.jpg) no-repeat center center/cover;
+}
+.gallery .inner #searchBox {
+  padding: 40px 10px 30px 0;
+  text-align: right;
+  font-size: 0;
+}
+.gallery .inner #searchBox #search {
+  width: 200px;
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #333;
+}
+.gallery .inner #searchBox .btnSearch {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  vertical-align: top;
+  border: 1px solid #333;
+  border-left: none;
+  font-size: 20px;
+  color: #333;
+}
+.gallery .inner #wrap .loading {
+  width: 100px;
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 1s;
+}
+.gallery .inner #wrap .loading.off {
+  opacity: 0;
+}
+.gallery .inner #wrap #list {
+  font-size: 0;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 1s;
+}
+.gallery .inner #wrap #list.on {
+  transform: translateY(0px);
+  opacity: 1;
+}
+.gallery .inner #wrap #list::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.gallery .inner #wrap #list .item {
+  float: left;
+  width: 33.3333333333%;
+  padding: 10px;
+}
+.gallery .inner #wrap #list .item div {
+  position: relative;
+}
+.gallery .inner #wrap #list .item div:hover span {
+  opacity: 1;
+}
+.gallery .inner #wrap #list .item div a {
+  width: 100%;
+}
+.gallery .inner #wrap #list .item div a > img {
+  width: 100%;
+}
+.gallery .inner #wrap #list .item div span {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  transition: 0.5s;
+}
+.gallery .inner #wrap #list .item div span p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.gallery .inner #wrap #list .item div span > img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.gallery .inner #wrap #list .item div span strong {
+  font-size: 10px;
+  font-weight: normal;
+  color: #eee;
+  vertical-align: top;
+  line-height: 20px;
+}
+.gallery .inner #wrap .pop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gallery .inner #wrap .pop .btnClose {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+.gallery .inner #wrap .errMsg {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 100px;
+}
+
 * {
   margin: 0;
   padding: 0;

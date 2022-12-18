@@ -1,17 +1,20 @@
 const body = document.querySelector("body");
 const vidList = document.querySelector(".vidList");
+
 const key = "AIzaSyCaXRXk4IImstZdfY92MFZLzPLaz0VxlRc";
 const playlistId = "PL5lm99t4rEC4v0vphLBO7rm2f9mR_nMeY";
-const num = 12;
-const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlistId}&maxResults=${num}`;
+const maxResults = 12;
+const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlistId}&maxResults=${maxResults}`;
 
+// 데이터 불러오기
 fetch(url)
   .then((data) => {
     return data.json();
   })
   .then((json) => {
+    // console.log(json);
     let items = json.items;
-    console.log(items);
+    // console.log(items);
 
     let result = "";
 
@@ -45,7 +48,7 @@ fetch(url)
 
     vidList.innerHTML = result;
   })
-
+// 동영상 클릭시 큰동영상 나타나게 
 vidList.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -61,7 +64,7 @@ vidList.addEventListener("click", (e) => {
   vidList.append(pop);
   body.style.overflow = "hidden";
 })
-
+// 동영상 닫기
 vidList.addEventListener("click", (e) => {
   const pop = vidList.querySelector(".pop");
 

@@ -10,6 +10,7 @@ btns.forEach((el, index) => {
   })
 })
 
+// 버튼 활성화
 function activation(arr, index) {
   for (let el of arr) el.classList.remove("on");
   arr[index].classList.add("on");

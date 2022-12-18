@@ -1,0 +1,134 @@
+.gallery {
+	.sub_visual {
+		background: url(../img/work1.jpg) no-repeat center
+			center/cover;
+	}
+	.inner {
+		#searchBox {
+			padding: 40px 10px 30px 0;
+			text-align: right;
+			font-size: 0;
+			#search {
+				width: 200px;
+				height: 40px;
+				padding: 10px;
+				font-size: 16px;
+				border: 1px solid #333;
+			}
+			.btnSearch {
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				vertical-align: top;
+				border: 1px solid #333;
+				border-left: none;
+				font-size: 20px;
+				color: #333;
+			}
+		}
+		#wrap {
+			.loading {
+				width: 100px;
+				position: fixed;
+				top: 70%;
+				left: 50%;
+				transform: translateX(-50%);
+				transition: 1s;
+				&.off {
+					opacity: 0;
+				}
+			}
+			#list {
+				font-size: 0;
+				transform: translateY(100px);
+				opacity: 0;
+				transition: 1s;
+				&.on {
+					transform: translateY(0px);
+					opacity: 1;
+				}
+				&::after {
+					content: "";
+					display: block;
+					clear: both;
+				}
+				.item {
+					float: left;
+					width: calc(100% / 3);
+					padding: 10px;
+					div {
+						position: relative;
+						&:hover {
+							span {
+								opacity: 1;
+							}
+						}
+						a {
+							width: 100%;
+							> img {
+								width: 100%;
+							}
+						}
+						span {
+							display: block;
+							width: 100%;
+							padding: 5px;
+							background: rgba(0, 0, 0, 0.4);
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							opacity: 0;
+							transition: 0.5s;
+							p {
+								font-size: 14px;
+								font-weight: bold;
+								color: #fff;
+								margin-bottom: 10px;
+							}
+							> img {
+								width: 20px;
+								height: 20px;
+								border-radius: 50%;
+								margin-right: 5px;
+							}
+							strong {
+								font-size: 10px;
+								font-weight: normal;
+								color: #eee;
+								vertical-align: top;
+								line-height: 20px;
+							}
+						}
+					}
+				}
+			}
+			.pop {
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 1;
+				width: 100%;
+				height: 100vh;
+				background: rgba(0, 0, 0, 0.8);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				.btnClose {
+					position: absolute;
+					top: 5%;
+					right: 5%;
+					font-size: 30px;
+					color: #fff;
+					cursor: pointer;
+				}
+			}
+			.errMsg {
+				font-size: 20px;
+				text-align: center;
+				margin-top: 100px;
+			}
+		}
+	}
+}

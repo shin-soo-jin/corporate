@@ -62,7 +62,9 @@
 		width: 100%;
 		height: 500px;
 		padding-top: 50px;
-		.inner {
+		.wrap {
+			width: 1180px;
+			margin: 0 auto;
 			display: flex;
 			justify-content: space-between;
 			align-items: top;
@@ -158,7 +160,8 @@
 		.member {
 			height: 700px;
 			padding-top: 50px;
-			.inner {
+			.wrap {
+				width: 95%;
 				flex-direction: column;
 				.text {
 					width: 100%;
@@ -191,7 +194,7 @@
 	.about {
 		.member {
 			height: 1500px;
-			.inner {
+			.wrap {
 				.team {
 					ul {
 						flex-direction: column;

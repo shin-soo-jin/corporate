@@ -40,12 +40,12 @@ btnCall.addEventListener("click", (e) => {
 window.addEventListener("scroll", () => {
   let scroll = window.scrollY || window.pageYOffset;
 
-  // 스크롤 네비 컨텐츠영역에서 나타나게 
+  // 스크롤 버튼 컨텐츠영역에서 나타나게 
   if (scroll >= posArr[0] + base) { scrollBtn.style.opacity = "1" } else {
     scrollBtn.style.opacity = "0"
   }
 
-  // 스크롤 네비 클릭시 활성화, 섹션 진입시 모션 나타나게
+  // 스크롤 버튼 클릭시 활성화, 섹션 진입시 모션 나타나게
   sections.forEach((el, index) => {
     if (scroll >= posArr[index] + base) {
       scrollBtnLis.forEach((el, index) => {
@@ -56,7 +56,7 @@ window.addEventListener("scroll", () => {
     }
   })
 
-  // 스크롤 네비 클릭시 해당 섹션으로 이동
+  // 스크롤 버튼 클릭시 해당 섹션으로 이동
   scrollBtnLis.forEach((el, index) => {
     el.addEventListener("click", (e) => {
       e.preventDefault();
@@ -84,4 +84,15 @@ vidBtn.addEventListener("click", (e) => {
     vidBtn.classList.add("pausing");
     video.pause();
   }
+})
+
+// 탑버튼 클릭시 상단으로 이동
+btnTop.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  new Anim(window, {
+    prop: 'scroll',
+    value: '0',
+    duration: 500,
+  })
 })

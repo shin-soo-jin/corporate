@@ -18,11 +18,22 @@
 		margin-bottom: 10px;
 		border: 1px solid #ccc;
 	}
-	label[for="agree"] {
-		margin-left: 5px;
+	.agree {
+		label[for="agree"] {
+			margin-left: 5px;
+		}
+		span {
+			display: inline-block;
+			margin-left: 10px;
+			font-size: 11px;
+			color: red;
+			i {
+				margin-right: 5px;
+			}
+		}
 	}
 	h3 {
-		margin-top: 40px;
+		margin-top: 60px;
 		margin-bottom: 20px;
 		font-size: 24px;
 		color: #333;
@@ -55,6 +66,15 @@
 					height: 40px;
 					border: 1px solid #ccc;
 					text-indent: 15px;
+				}
+				span {
+					display: inline-block;
+					margin-left: 10px;
+					font-size: 11px;
+					color: red;
+					i {
+						margin-right: 5px;
+					}
 				}
 			}
 		}

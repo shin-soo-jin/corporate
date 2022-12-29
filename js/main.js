@@ -16,7 +16,8 @@ const gnbMo = document.querySelector('#gnbMo');
 const sections = document.querySelectorAll('.section');
 const scrollBtn = document.querySelector('.scrollBtn');
 const scrollBtnLis = scrollBtn.querySelectorAll('li');
-const base = -300;
+// const base = -300;
+const base = 0;
 
 const video = document.querySelector('video');
 const vidBtn = document.querySelector('.vidBtn');
@@ -26,6 +27,8 @@ const btnTop = document.querySelector('.btnTop');
 let posArr = [];
 for (let el of sections) {
 	posArr.push(el.offsetTop);
+
+	console.log(el.offsetTop);
 }
 
 // 햄버거 버튼 클릭 이벤트

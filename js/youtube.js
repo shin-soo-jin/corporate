@@ -1,38 +1,37 @@
-const body = document.querySelector("body");
-const vidList = document.querySelector(".vidList");
+const body = document.querySelector('body');
+const vidList = document.querySelector('.vidList');
 
-const key = "AIzaSyCaXRXk4IImstZdfY92MFZLzPLaz0VxlRc";
-const playlistId = "PL5lm99t4rEC4v0vphLBO7rm2f9mR_nMeY";
+const key = 'AIzaSyCaXRXk4IImstZdfY92MFZLzPLaz0VxlRc';
+const playlistId = 'PL5lm99t4rEC4v0vphLBO7rm2f9mR_nMeY';
 const maxResults = 12;
 const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlistId}&maxResults=${maxResults}`;
 
 // 데이터 불러오기
 fetch(url)
-  .then((data) => {
-    return data.json();
-  })
-  .then((json) => {
-    // console.log(json);
-    let items = json.items;
-    // console.log(items);
+	.then((data) => {
+		return data.json();
+	})
+	.then((json) => {
+		// console.log(json);
+		let items = json.items;
+		// console.log(items);
 
-    let result = "";
+		let result = '';
 
-    items.map((el) => {
+		items.map((el) => {
+			let title = el.snippet.title;
+			if (title.length > 30) {
+				title = title.substr(0, 30) + '...';
+			}
 
-      let title = el.snippet.title;
-      if (title.length > 30) {
-        title = title.substr(0, 30) + "...";
-      }
+			let con = el.snippet.description;
+			if (con.length > 100) {
+				con = con.substr(0, 25) + '...';
+			}
 
-      let con = el.snippet.description;
-      if (con.length > 100) {
-        con = con.substr(0, 25) + "...";
-      }
+			let owner = el.snippet.videoOwnerChannelTitle;
 
-      let owner = el.snippet.videoOwnerChannelTitle;
-
-      result += `
+			result += `
         <article>
           <a href="${el.snippet.resourceId.videoId}" class="pic">
             <img src="${el.snippet.thumbnails.maxres.url}">
@@ -44,36 +43,37 @@ fetch(url)
           </div>
         </article>
       `;
-    })
+		});
 
-    vidList.innerHTML = result;
-  })
-// 동영상 클릭시 큰동영상 나타나게 
-vidList.addEventListener("click", (e) => {
-  e.preventDefault();
+		vidList.innerHTML = result;
+	});
 
-  const vidId = e.target.closest("a").getAttribute("href");
+// 동영상 클릭시 큰동영상 나타나게
+vidList.addEventListener('click', (e) => {
+	e.preventDefault();
 
-  let pop = document.createElement("aside");
-  pop.classList.add("pop");
-  pop.innerHTML = `
+	const vidId = e.target.closest('a').getAttribute('href');
+
+	let pop = document.createElement('aside');
+	pop.classList.add('pop');
+	pop.innerHTML = `
     <iframe src="https://www.youtube.com/embed/${vidId}" frameborder="0" width="100%" height="100%" allowfullscreen></iframe>
     <span class="btnClose"><i class="fa-solid fa-xmark"></i></span>
   `;
 
-  vidList.append(pop);
-  body.style.overflow = "hidden";
-})
+	vidList.append(pop);
+	body.style.overflow = 'hidden';
+});
 // 동영상 닫기
-vidList.addEventListener("click", (e) => {
-  const pop = vidList.querySelector(".pop");
+vidList.addEventListener('click', (e) => {
+	const pop = vidList.querySelector('.pop');
 
-  if (pop) {
-    const close = pop.querySelector("span i");
+	if (pop) {
+		const close = pop.querySelector('span i');
 
-    if (e.target == close) {
-      pop.remove();
-      body.style.overflow = "auto";
-    }
-  }
-})
+		if (e.target == close) {
+			pop.remove();
+			body.style.overflow = 'auto';
+		}
+	}
+});

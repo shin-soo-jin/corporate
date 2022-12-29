@@ -1,4 +1,4 @@
-// 스와이퍼 플러그인
+// swiper 플러그인
 var swiper = new Swiper('.mySwiper', {
 	pagination: {
 		el: '.swiper-pagination',
@@ -95,6 +95,6 @@ btnTop.addEventListener('click', (e) => {
 	new Anim(window, {
 		prop: 'scroll',
 		value: '0',
-		duration: 0,
+		duration: 500,
 	});
 });

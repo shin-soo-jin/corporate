@@ -1,19 +1,19 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 $tablet: 1179px;
 $mobile: 539px;
 
-@import "sub_page.scss";
-@import "news.scss";
-@import "join.scss";
-@import "contact.scss";
-@import "about.scss";
-@import "youtube.scss";
-@import "gallery.scss";
+@import 'sub_page.scss';
+@import 'news.scss';
+@import 'join.scss';
+@import 'contact.scss';
+@import 'about.scss';
+@import 'youtube.scss';
+@import 'gallery.scss';
 
-@import "reset.scss";
-@import "mixin.scss";
+@import 'reset.scss';
+@import 'mixin.scss';
 
 // web
 #header {
@@ -55,7 +55,7 @@ $mobile: 539px;
 							color: #fff;
 							position: relative;
 							&::after {
-								content: "";
+								content: '';
 								width: 0%;
 								height: 2px;
 								background: #4b84db;
@@ -113,7 +113,7 @@ $mobile: 539px;
 					transition: 0.5s;
 				}
 				&::before {
-					content: "";
+					content: '';
 					display: block;
 					width: 100%;
 					height: 2px;
@@ -124,7 +124,7 @@ $mobile: 539px;
 					transition: top 0.5s 0s, transform 0.5s 0.5s;
 				}
 				&::after {
-					content: "";
+					content: '';
 					display: block;
 					width: 100%;
 					height: 2px;
@@ -279,7 +279,7 @@ $mobile: 539px;
 					background-image: url(../img/visual4.jpg);
 				}
 				&::after {
-					content: "";
+					content: '';
 					display: block;
 					width: 100%;
 					height: 100%;
@@ -604,7 +604,7 @@ $mobile: 539px;
 					}
 				}
 				&::after {
-					content: "";
+					content: '';
 					display: block;
 					width: 100%;
 					height: 100%;
@@ -652,7 +652,7 @@ $mobile: 539px;
 		}
 	}
 	&::after {
-		content: "";
+		content: '';
 		display: block;
 		width: 100%;
 		height: 100%;
@@ -703,7 +703,7 @@ $mobile: 539px;
 					float: right;
 				}
 				i {
-					content: "";
+					content: '';
 					display: block;
 					width: 100%;
 					height: 10px;
@@ -713,7 +713,7 @@ $mobile: 539px;
 					left: 0;
 				}
 				b {
-					content: "";
+					content: '';
 					display: block;
 					height: 10px;
 					background: #fff;
@@ -748,7 +748,6 @@ $mobile: 539px;
 
 #contact {
 	padding: 80px 0;
-	background: #f5f5f5;
 	.inner {
 		display: flex;
 		justify-content: space-between;
@@ -759,15 +758,17 @@ $mobile: 539px;
 				font-size: 20px;
 				margin-bottom: 40px;
 			}
-			p {
-				font-size: 12px;
-				margin-bottom: 40px;
-			}
-			span {
-				font-size: 14px;
-				padding-right: 20px;
-				b {
-					margin-right: 5px;
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				li {
+					width: 48%;
+					margin-bottom: 20px;
+					font-size: 14px;
+					i {
+						width: 25px;
+					}
 				}
 			}
 		}
@@ -775,55 +776,45 @@ $mobile: 539px;
 			width: 67%;
 			fieldset {
 				border: none;
-				table {
-					width: 100%;
-					border-collapse: collapse;
-					tr {
-						text-align: left;
-						th {
-							width: 20%;
-							padding: 5px 0;
-							font-size: 16px;
-							input[type="button"] {
-								display: block;
-								width: 100%;
-								height: 35px;
-								margin: 10px 0 0;
-								border: 1px solid #333;
-								background: #333;
-								color: #fff;
-								cursor: pointer;
-								transition: 0.3s;
-								&:hover {
-									background: #fff;
-									color: #333;
-								}
-							}
-						}
-						td {
-							padding: 5px 0;
-							font-weight: normal;
-							label {
-								margin-right: 20px;
-								font-size: 16px;
-								font-weight: bold;
-								input[type="checkbox"] {
-									margin-right: 10px;
-								}
-							}
-							input[type="text"] {
-								width: 100%;
-								height: 40px;
-								border: 1px solid #333;
-							}
-							textarea {
-								resize: none;
-								width: 100%;
-								height: 15vh;
-								border: 1px solid #333;
-							}
-						}
+				b {
+					font-size: 16px;
+					font-weight: bold;
+					color: #333;
+					margin-right: 40px;
+				}
+				label {
+					margin-right: 20px;
+					font-size: 16px;
+					color: #333;
+					input[type='checkbox'] {
+						margin-right: 10px;
+						margin-bottom: 10px;
 					}
+				}
+				input[type='text'] {
+					width: 100%;
+					height: 40px;
+					border: none;
+					border-bottom: 1px solid #333;
+					padding: 10px;
+					font-size: 16px;
+					margin-bottom: 10px;
+				}
+				textarea {
+					resize: none;
+					width: 100%;
+					height: 15vh;
+					border: none;
+					border-bottom: 1px solid #333;
+					padding: 10px;
+					font-size: 16px;
+					margin-bottom: 10px;
+				}
+				input[type='button'] {
+					@include button;
+					margin: 0 auto;
+					border: transparent;
+					letter-spacing: 1px;
 				}
 			}
 		}
@@ -1035,23 +1026,19 @@ $mobile: 539px;
 	#contact {
 		.inner {
 			.text {
-				span {
-					display: inline-block;
-					b {
-						display: block;
+				ul {
+					li {
+						i {
+							width: 100%;
+						}
 					}
 				}
 			}
 			form {
 				fieldset {
-					table {
-						tr {
-							td {
-								label {
-									display: inline-block;
-								}
-							}
-						}
+					b {
+						display: block;
+						margin-bottom: 10px;
 					}
 				}
 			}
@@ -1081,17 +1068,17 @@ $mobile: 539px;
 		.inner {
 			flex-direction: column-reverse;
 			.text {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-				align-items: center;
 				width: 100%;
 				margin-top: 40px;
+				text-align: center;
 				h2 {
 					margin-bottom: 20px;
 				}
 				p {
 					margin-bottom: 20px;
+				}
+				.btn {
+					margin: 0 auto;
 				}
 			}
 			.vid {
@@ -1124,13 +1111,31 @@ $mobile: 539px;
 				width: 100%;
 				margin-bottom: 40px;
 				h2 {
+					text-align: center;
 					margin-bottom: 20px;
 				}
 				p {
 					margin-bottom: 20px;
 				}
+				.btn {
+					margin: 0 auto;
+				}
 			}
 			.chart {
+				width: 100%;
+			}
+		}
+	}
+
+	#contact {
+		.inner {
+			flex-direction: column;
+			.text {
+				width: 100%;
+				text-align: center;
+				margin-bottom: 40px;
+			}
+			form {
 				width: 100%;
 			}
 		}
